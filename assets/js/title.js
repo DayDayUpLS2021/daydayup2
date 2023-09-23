@@ -8,11 +8,25 @@
 
 
 function set_title(){
+
     const app_url = window.location.href;
-    console.log(app_url);
-    if(app_url.includes('index.html')){
-        document.title = 'Home - DayDayUp Language School';
+    const title = ' - DayDayUp Language School';
+
+    if(app_url.includes('about.html')){
+        document.title = 'About' + title;
+    }else if(app_url.includes('courses.html')){
+        document.title = 'Courses' + title;
+    }else if(app_url.includes('courses-details.html')){
+        document.title = 'Courses Details' + title;
     }else if(app_url.includes('teachers.html')){
-        document.title = 'Teachers - DayDayUp Language School';
+        document.title = 'Teachers' + title;
+    }else if(app_url.includes('events.html')){
+        document.title = 'Events' + title;
+    }else if(app_url.includes('pricing.html')){
+        document.title = 'Pricing' + title;
+    }else if(app_url.includes('contact.html')){
+        document.title = 'Contact' + title;
+    }else{
+        document.title = 'Home' + title;
     }
 }
