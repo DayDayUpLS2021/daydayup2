@@ -16,8 +16,8 @@ function set_title(){
         document.title = 'About' + title;
     }else if(app_url.includes('courses.html')){
         document.title = 'Courses' + title;
-    }else if(app_url.includes('courses-details.html')){
-        document.title = 'Courses Details' + title;
+    }else if(app_url.includes('course-details.html')){
+        document.title = 'Course Details' + title;
     }else if(app_url.includes('teachers.html')){
         document.title = 'Teachers' + title;
     }else if(app_url.includes('events.html')){
