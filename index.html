@@ -28,6 +28,8 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <!-- =======================================================
   * Template Name: Mentor
   * Updated: Mar 10 2023 with Bootstrap v5.2.3
@@ -43,7 +45,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">DayDayUp Language Scool</a></h1>
+      <h1 class="logo me-auto"><a href="index.html" class="app_name">DayDayUp Language Scool</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -51,9 +53,19 @@
         <ul>
           <li><a class="active" href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="courses.html">Courses</a></li>
+          <li class="dropdown"><a href="#"><span>Classes</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="classes.html">Classes</a></li>
+              <li><a href="classes-holiday.html">Holiday Classes</a></li>
+            </ul>
+          </li>
           <li><a href="teachers.html">Teachers</a></li>
-          <li><a href="events.html">Events</a></li>
+          <li class="dropdown"><a href="#"><span>Case Study</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="case-study.html">Case Study</a></li>
+              <li><a href="parent-word.html">Parent's Words</a></li>
+            </ul>
+          </li>
           <!-- <li><a href="pricing.html">Pricing</a></li> -->
 
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -78,7 +90,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="courses.html" class="get-started-btn">Get Started</a>
+      <a href="classes.html" class="get-started-btn">Get Started</a>
 
     </div>
   </header><!-- End Header -->
@@ -88,7 +100,7 @@
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
       <h1>Learning Today,<br>Leading Tomorrow</h1>
       <h2>We are team of talented designers making websites with Bootstrap</h2>
-      <a href="courses.html" class="btn-get-started">Get Started</a>
+      <a href="classes.html" class="btn-get-started">Get Started</a>
     </div>
   </section><!-- End Hero -->
 
@@ -136,7 +148,7 @@
 
           <div class="col-lg-3 col-6 text-center">
             <span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Courses</p>
+            <p>Classes</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
@@ -285,13 +297,13 @@
       </div>
     </section><!-- End Features Section -->
 
-    <!-- ======= Popular Courses Section ======= -->
+    <!-- ======= Popular Classes Section ======= -->
     <section id="popular-courses" class="courses">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Courses</h2>
-          <p>Popular Courses</p>
+          <h2>Classes</h2>
+          <p>Popular Classes</p>
         </div>
 
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
@@ -305,7 +317,7 @@
                   <p class="price">$169</p>
                 </div>
 
-                <h3><a href="course-details.html">Website Design</a></h3>
+                <h3><a href="class-details.html">Website Design</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -331,7 +343,7 @@
                   <p class="price">$250</p>
                 </div>
 
-                <h3><a href="course-details.html">Search Engine Optimization</a></h3>
+                <h3><a href="class-details.html">Search Engine Optimization</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -357,7 +369,7 @@
                   <p class="price">$180</p>
                 </div>
 
-                <h3><a href="course-details.html">Copywriting</a></h3>
+                <h3><a href="class-details.html">Copywriting</a></h3>
                 <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
@@ -377,7 +389,7 @@
         </div>
 
       </div>
-    </section><!-- End Popular Courses Section -->
+    </section><!-- End Popular Classes Section -->
 
     <!-- ======= Teachers Section ======= -->
     <section id="trainers" class="trainers">
@@ -455,18 +467,20 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Mentor</h3>
-            <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+          <div class="col-lg-6 footer-contact">
+            <h3 class="app_name">DayDayUp Language School</h3>
+          </div>
+
+          <div class="col-lg-6 footer-contact">
+            <p class="app_address">
+              846 YiShun Ring Road #01-3631（level 2）<br>
+              Singapore 760846 <br><br>
+              <strong>Phone:</strong> 6530 3063<br>
+              <strong>Email:</strong> daydayupls21@gmail.com<br>
             </p>
           </div>
 
-          <div class="col-lg-2 col-md-6 footer-links">
+          <!-- <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
@@ -486,32 +500,32 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
             </ul>
-          </div>
+          </div> -->
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
+          <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
-          </div>
+          </div> -->
 
         </div>
       </div>
     </div>
 
-    <div class="container d-md-flex py-4">
+    <!-- <div class="container d-md-flex py-4">
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
           &copy; Copyright <strong><span>Mentor</span></strong>. All Rights Reserved
         </div>
-        <div class="credits">
+        <div class="credits"> -->
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
@@ -521,7 +535,7 @@
         <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
-    </div>
+    </div> -->
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
@@ -534,12 +548,15 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
+
+  <!-- Set title of page -->
+  <script src="assets/js/globals.js"></script>  
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
 
-  <!-- Set title of page -->
-  <script src="assets/js/globals.js"></script>
+  
 
 </body>
 

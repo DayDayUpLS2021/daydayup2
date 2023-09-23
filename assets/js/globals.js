@@ -1,32 +1,45 @@
 
 (function() {
 
-    set_title();
+    set_page();
 
-})()
+})();
 
 
 
-function set_title(){
-
+function set_page() {
     const app_url = window.location.href;
-    const title = ' - DayDayUp Language School';
+    const app_name = 'DayDayUp Language School';
+    let page = '';
 
-    if(app_url.includes('about.html')){
-        document.title = 'About' + title;
-    }else if(app_url.includes('courses.html')){
-        document.title = 'Courses' + title;
-    }else if(app_url.includes('course-details.html')){
-        document.title = 'Course Details' + title;
-    }else if(app_url.includes('teachers.html')){
-        document.title = 'Teachers' + title;
-    }else if(app_url.includes('events.html')){
-        document.title = 'Events' + title;
-    }else if(app_url.includes('pricing.html')){
-        document.title = 'Pricing' + title;
-    }else if(app_url.includes('contact.html')){
-        document.title = 'Contact' + title;
-    }else{
-        document.title = 'Home' + title;
+    if (app_url.includes('about.html')) {
+        page = 'About';
+    } else if (app_url.includes('classes.html')) {
+        page = 'Classes';
+    } else if (app_url.includes('class-details.html')) {
+        page = 'Class Details';
+    } else if (app_url.includes('classes-holiday.html')) {
+        page = 'Holiday Classes';
+    } else if (app_url.includes('class-holiday-details.html')) {
+        page = 'Holiday Class Details';
+    } else if (app_url.includes('teachers.html')) {
+        page = 'Teachers';
+    } else if (app_url.includes('parent-word.html')) {
+        page = 'Parent\'s Words';
+    } else if (app_url.includes('case-study.html')) {
+        page = 'Case Study';
+    } else if (app_url.includes('pricing.html')) {
+        page = 'Pricing';
+    } else if (app_url.includes('contact.html')) {
+        page = 'Contact';
+    } else {
+        page = 'Home';
     }
+
+    const app_title = page + ' - ' + app_name;
+    document.title = app_title;
+    $('.app_name').text(app_name);
+
+
+    $('.app_address').html("846 YiShun Ring Road #01-3631（level 2）\nSingapore 760846 <br/><br/><strong>Phone:</strong> 6530 3063<br/><strong>Email:</strong> daydayupls21@gmail.com");
 }
