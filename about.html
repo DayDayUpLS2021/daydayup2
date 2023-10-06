@@ -30,6 +30,13 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+  <style>
+    .pt-1 {
+      padding: 10px !important;
+    }
+  </style>
+  
+
   <!-- =======================================================
   * Template Name: Mentor
   * Updated: Mar 10 2023 with Bootstrap v5.2.3
@@ -51,41 +58,25 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a class="active" href="about.html">About</a></li>
-          <li class="dropdown"><a href="#"><span>Classes</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a href="index.html" class="app_home">Home</a></li>
+          <li><a class="active app_about" href="about.html">About</a></li>
+          <li class="dropdown"><a href="#"><span class="app_programmes">Programmes</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="classes.html">Classes</a></li>
-              <li><a href="classes-holiday.html">Holiday Classes</a></li>
+              <li><a href="classes.html" class="app_class">Classes</a></li>
+              <li><a href="classes-holiday.html" class="app_class_holiday">Holiday Classes</a></li>
             </ul>
           </li>
-          <li><a href="teachers.html">Teachers</a></li>
-          <li class="dropdown"><a href="#"><span>Case Study</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a href="teachers.html" class="app_teacher">Teachers</a></li>
+          <li class="dropdown"><a href="#"><span class="app_reviews">Reviews</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="case-study.html">Case Study</a></li>
-              <li><a href="parent-word.html">Parent's Words</a></li>
+              <li><a href="student-works.html" class="app_student_work">Student Works</a></li>
+              <li><a href="parent-word.html" class="app_parent_word">Parents' Words</a></li>
             </ul>
           </li>
-          <!-- <li><a href="pricing.html">Pricing</a></li> -->
+          
 
-          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> -->
-          <li><a href="contact.html">Contact</a></li>
+          
+          <li><a href="contact.html" class="app_contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -100,7 +91,7 @@
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
         <h2>About Us</h2>
-        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+        <p>DayDayUp Language School 天天向上语文学校</p>
       </div>
     </div><!-- End Breadcrumbs -->
 
@@ -113,7 +104,7 @@
             <img src="assets/img/about.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <!-- <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
             <p class="fst-italic">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
               magna aliqua.
@@ -125,7 +116,51 @@
             </ul>
             <p>
               Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            </p>
+            </p> -->
+
+
+            <table>
+              <tr>
+                <td >
+                  <ul><li><i class="bi bi-check-circle"></i></li></ul>
+                </td>
+                <td>
+                  Share the Joy of Learning Mandarin!<br/>让华语更有趣！
+                </td>
+              </tr>
+              <tr>
+                <td class="pt-1">
+                  <ul><li><i class="bi bi-check-circle"></i></li></ul>
+                </td>
+                <td class="pt-1">
+                  Based on the Singapore MOE's syllabus, incorporates a large number of article and poetry appreciation.<br/>以新加坡教育部教学大纲为基础，融入大量美文和古诗词欣赏。
+                </td>
+              </tr>
+              <tr>
+                <td class="pt-1">
+                  <ul><li><i class="bi bi-check-circle"></i></li></ul>
+                </td>
+                <td class="pt-1">
+                  Recognition far exceeds the requirements of schools, concurrently improve the ability of Reading, Listening and Oral.<br/>认字量远远超过政府学校要求，同时提高阅读&听力&口试的能力。
+                </td>
+              </tr>
+              <tr>
+                <td class="pt-1">
+                  <ul><li><i class="bi bi-check-circle"></i></li></ul>
+                </td><td class="pt-1">
+                  In-depth article analysis improves comprehension and writing skills<br/>深入的文章分析提高理解问答和写作能力。
+                </td>
+              </tr>
+              <tr>
+                <td class="pt-1">
+                  <ul><li><i class="bi bi-check-circle"></i></li></ul>
+                </td>
+                <td class="pt-1">
+                  Relaxing and lively forms of learning. <br/>轻松活泼的学习方式。
+                </td>
+              </tr>
+            </table>
+           
 
           </div>
         </div>
