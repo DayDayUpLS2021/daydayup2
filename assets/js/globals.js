@@ -23,6 +23,9 @@ function set_page() {
 
     let page = 'Home';
 
+    $('.app_reviews').hide();
+    $('.app_reviews_chevron').hide();
+
     if (app_url.includes('about.html')) {
         page = 'About';
     }else if (app_url.includes('timetable.html')) {
