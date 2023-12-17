@@ -25,6 +25,8 @@ function set_page() {
 
     if (app_url.includes('about.html')) {
         page = 'About';
+    }else if (app_url.includes('timetable.html')) {
+        page = 'Timetable';
     } else if (app_url.includes('classes.html')) {
         page = 'Classes';
     } else if (app_url.includes('class-details.html')) {
@@ -50,6 +52,7 @@ function set_page() {
     //header tab title
     $('.app_home').text('Home');
     $('.app_about').text('About');
+    $('.app_timetable').text('Timetable');
     $('.app_programmes').text('Programmes');
     $('.app_class').text('Classes');
     $('.app_class_holiday').text('Holiday Classes');

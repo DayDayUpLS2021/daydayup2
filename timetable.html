@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Holiday Classes - DayDayUp Language School</title>
+  <title>DayDayUp Language School</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -30,7 +30,6 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
   <!-- =======================================================
   * Template Name: Mentor
   * Updated: Mar 10 2023 with Bootstrap v5.2.3
@@ -46,19 +45,19 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html" class="app_name">DayDayUp Language School</a></h1>
+      <h1 class="logo me-auto"><a href="index.html" class="app_name">DayDayUp Language Scool</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="index.html" class="app_home">Home</a></li>
+          <li><a class="app_home" href="index.html">Home</a></li>
           <li><a href="about.html" class="app_about">About</a></li>
-          <li><a href="timetable.html" class="app_timetable">Timetable</a></li>
-          <li class="dropdown"><a class="active"  href="#"><span class="app_programmes">Programmes</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a href="timetable.html" class="active app_timetable">Timetable</a></li>
+          <li class="dropdown"><a href="#"><span class="app_programmes">Programmes</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="classes.html" class="app_classes">Classes</a></li>
-              <li><a class="active app_class_holiday" href="classes-holiday.html">Holiday Classes</a></li>
+              <li><a href="classes.html" class="app_class">Classes</a></li>
+              <li><a href="classes-holiday.html" class="app_class_holiday">Holiday Classes</a></li>
             </ul>
           </li>
           <li><a href="teachers.html" class="app_teacher">Teachers</a></li>
@@ -70,6 +69,23 @@
           </li>
           
 
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
           <li><a href="contact.html" class="app_contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -80,32 +96,105 @@
     </div>
   </header><!-- End Header -->
 
-  <main id="main" data-aos="fade-in">
+  <!-- ======= Timetable Section ======= -->
+  <!-- <section id="timetable" class="d-flex justify-content-center align-items-center"> -->
+    <!-- <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <h1>好好学习,<br>天天向上</h1>
+      <h2>语文补习中心</h2>
+      <a href="classes.html" class="btn-get-started">Get Started</a>
+    </div> -->
+  <!-- </section> -->
+  <!-- End Timetable -->
 
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs">
-      <div class="container">
-        <h2>Holiday Classes</h2>
-      </div>
-    </div><!-- End Breadcrumbs -->
+  <main id="main">
 
-    <!-- ======= Classes Section ======= -->
-    <section id="courses" class="courses">
+    <div class="timetable">
+      <img src="assets/img/timetable/timetable.png" class="img-fluid" alt="">
+    </div>
+
+    <!-- ======= About Section ======= -->
+    <!-- <section id="about" class="about">
       <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="assets/img/timetable/timetable.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+
+            <table>
+              <tr>
+                <td class="pt-1">
+                  <ul><li><i class="bi bi-check-circle"></i></li></ul>
+                </td>
+                <td>
+                  Share the Joy of Learning Mandarin!<br/>让华语学习更有趣，更容易，更实用！
+                </td>
+              </tr>
+              <tr>
+                <td class="pt-1">
+                  <ul><li><i class="bi bi-check-circle"></i></li></ul>
+                </td>
+                <td class="pt-1">
+                  Based on the Singapore MOE's syllabus, incorporates a large number of article and poetry appreciation.<br/>以新加坡教育部教学大纲为基础，融入中外名著、古诗词、诗经等美文欣赏。
+                </td>
+              </tr>
+              <tr>
+                <td class="pt-1">
+                  <ul><li><i class="bi bi-check-circle"></i></li></ul>
+                </td>
+                <td class="pt-1">
+                  Recognition far exceeds the requirements of schools, concurrently improve the ability of Reading, Listening and Oral.<br/>提高识字量，提高阅读能力，加强写作训练。辅助口试训练，达到<b>听</b>、<b>识</b>、<b>说</b>、<b>写</b>完美统一。
+                </td>
+              </tr>
+              <tr>
+                <td class="pt-1">
+                  <ul><li><i class="bi bi-check-circle"></i></li></ul>
+                </td><td class="pt-1">
+                  In-depth article analysis improves comprehension and writing skills.<br/>深入的文章分析提高理解问答和写作能力。
+                </td>
+              </tr>
+              <tr>
+                <td class="pt-1">
+                  <ul><li><i class="bi bi-check-circle"></i></li></ul>
+                </td>
+                <td class="pt-1">
+                  Relaxing and lively forms of learning and one-to-one consultative learning.<br/>轻松活泼的学习方式， 一对一辅助学习。
+                </td>
+              </tr>
+            </table>
+           
+
+          </div>
+        </div>
+
+      </div>
+    </section> -->
+    <!-- End About Section -->
+
+
+    <!-- ======= Popular Classes Section ======= -->
+    <!-- <section id="popular-courses" class="courses">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Classes</h2>
+          <p>Popular Classes</p>
+        </div>
 
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="course-item">
-              <img src="assets/img/classes/kindergarten.jpeg" class="img-fluid" alt="...">
+              <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Kindergarten</h4>
-                  <!-- <p class="price">$169</p> -->
+                  <h4>Web Development</h4>
+                  <p class="price">$169</p>
                 </div>
 
-                <h3><a href="class-holiday-details.html?level=K1">Kindergarten 1 - 2 (Holiday)</a></h3>
-                <!-- <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <h3><a href="class-details.html">Website Design</a></h3>
+                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
                     <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
@@ -116,48 +205,48 @@
                     &nbsp;&nbsp;
                     <i class="bx bx-heart"></i>&nbsp;65
                   </div>
-                </div> -->
+                </div>
               </div>
             </div>
-          </div> <!-- End Course Item-->
+          </div> 
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
             <div class="course-item">
-              <img src="assets/img/classes/primary.png" class="img-fluid" alt="...">
+              <img src="assets/img/course-2.jpg" class="img-fluid" alt="...">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Primary</h4>
-                  <!-- <p class="price">$169</p> -->
+                  <h4>Marketing</h4>
+                  <p class="price">$250</p>
                 </div>
 
-                <h3><a href="class-holiday-details.html?level=P1">Primary 1 - 6 (Holiday)</a></h3>
-                <!-- <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <h3><a href="class-details.html">Search Engine Optimization</a></h3>
+                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
-                    <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
-                    <span>Antonio</span>
+                    <img src="assets/img/trainers/trainer-2.jpg" class="img-fluid" alt="">
+                    <span>Lana</span>
                   </div>
                   <div class="trainer-rank d-flex align-items-center">
-                    <i class="bx bx-user"></i>&nbsp;50
+                    <i class="bx bx-user"></i>&nbsp;35
                     &nbsp;&nbsp;
-                    <i class="bx bx-heart"></i>&nbsp;65
+                    <i class="bx bx-heart"></i>&nbsp;42
                   </div>
-                </div> -->
+                </div>
               </div>
             </div>
-          </div> <!-- End Course Item-->
+          </div> 
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
             <div class="course-item">
-              <img src="assets/img/classes/secondary.jpeg" class="img-fluid" alt="...">
+              <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
               <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h4>Secondary</h4>
-                  <!-- <p class="price">$180</p> -->
+                  <h4>Content</h4>
+                  <p class="price">$180</p>
                 </div>
 
-                <h3><a href="class-holiday-details.html?level=S1">Secondary 1 - 4 (Holiday)</a></h3>
-                <!-- <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <h3><a href="class-details.html">Copywriting</a></h3>
+                <p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
                     <img src="assets/img/trainers/trainer-3.jpg" class="img-fluid" alt="">
@@ -168,15 +257,18 @@
                     &nbsp;&nbsp;
                     <i class="bx bx-heart"></i>&nbsp;85
                   </div>
-                </div> -->
+                </div>
               </div>
             </div>
-          </div> <!-- End Course Item-->
+          </div> 
 
         </div>
 
       </div>
-    </section><!-- End Classes Section -->
+    </section>
+    End Popular Classes Section -->
+
+    
 
   </main><!-- End #main -->
 
@@ -200,65 +292,12 @@
             </p>
           </div>
 
-          <!-- <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div> -->
-
-          <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div> -->
 
         </div>
-
         <div class="copyright-msg"></div>
-
       </div>
     </div>
 
-    <!-- <div class="container d-md-flex py-4">
-
-      <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Mentor</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits"> -->
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
-          <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-      </div>
-      <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-      </div>
-    </div> -->
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
@@ -271,11 +310,15 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
+
+  <!-- Set title of page -->
+  <script src="assets/js/globals.js"></script>  
+
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Set title of page -->
-  <script src="assets/js/globals.js"></script>
+
+  
 
 </body>
 
