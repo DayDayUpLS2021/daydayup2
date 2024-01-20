@@ -15,9 +15,7 @@ function set_page() {
     ];
 
     var timestamp = new Date().getTime();
-    // var cssUrl = "styles.css?v=" + timestamp;
     var cssUrl = "assets/css/style.css?v=" + timestamp;
-    console.log('<link rel="stylesheet" href="' + cssUrl + '">');
     document.write('<link rel="stylesheet" href="' + cssUrl + '">');
 
 
@@ -78,8 +76,6 @@ function set_page() {
         html += '<div class="footer-top"><div class="container"><div class="copyright-msg">'+copyright+'</div></div></div>';
         $('#footer').html(html);
     }else{
-        console.log('test');
-        console.log(outlet_arr[0][1]);
         $('.app_address').html(outlet_arr[0][1]);
     }
     
