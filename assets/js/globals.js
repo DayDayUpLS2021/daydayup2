@@ -14,11 +14,11 @@ function set_page() {
         ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846 <br/><br/><strong>Phone:</strong> 6530 3063<br/><strong>WhatsApp:</strong> +65 8151 5668<br/><strong>Email:</strong> daydayupls21@gmail.com','assets/attachment/daydayup1.jpg']
     ];
 
-
     var timestamp = new Date().getTime();
-    var cssUrl = "styles.css?v=" + timestamp;
+    // var cssUrl = "styles.css?v=" + timestamp;
+    var cssUrl = "assets/css/style.css?v=" + timestamp;
+    console.log('<link rel="stylesheet" href="' + cssUrl + '">');
     document.write('<link rel="stylesheet" href="' + cssUrl + '">');
-
 
 
     let page = 'Home';
@@ -73,12 +73,14 @@ function set_page() {
     if(app_url.includes('contact.html')){
         var html = '';
         outlet_arr.forEach((outlet, key) => {
-            html += '<div class="footer-top"><div class="container"><div class="row"><div class="col-lg-4 footer-contact"><h3 class="app_name_'+key+'">'+app_name+' ('+outlet[0]+')'+'</h3></div><div class="col-lg-4 footer-contact"><p class="app_address_'+key+'">'+outlet[1]+'</p></div><div class="col-lg-4 footer-contact"><img src="'+outlet[2]+'"   class="img-fluid app_img_'+key+'"></div></div></div></div>';
+            html += '<div class="footer-top"><div class="container"><div class="row"><div class="col-lg-4 footer-contact"><h3 class="app_name_'+key+'">'+app_name+' ('+outlet[0]+')'+'</h3></div><div class="col-lg-4 footer-contact"><p class="app_address_'+key+'">'+outlet[1]+'</p></div><div class="col-lg-4 footer-contact"><img src="'+outlet[2]+'" class="img-fluid app_img_'+key+'"></div></div></div></div>';
         });
         html += '<div class="footer-top"><div class="container"><div class="copyright-msg">'+copyright+'</div></div></div>';
         $('#footer').html(html);
     }else{
-        $('.app_address').html(outlet_arr[0]);
+        console.log('test');
+        console.log(outlet_arr[0][1]);
+        $('.app_address').html(outlet_arr[0][1]);
     }
     
 
