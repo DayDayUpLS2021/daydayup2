@@ -101,6 +101,8 @@ function load_student_work(max_photo = 10) {
     for(i=max_photo; i >= 1; i--){
         $('.student-works').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/xx'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
     }
+
+    $('.student-works').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/xxx1.jpg" alt="..." width="640" height="1100"></div></div></div>');
 }
 
 
