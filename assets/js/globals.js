@@ -21,8 +21,8 @@ function set_page() {
 
     let page = 'Home';
 
-    $('.app_reviews').hide();
-    $('.app_reviews_chevron').hide();
+    // $('.app_reviews').hide();
+    // $('.app_reviews_chevron').hide();
 
     if (app_url.includes('about.html')) {
         page = 'About';
@@ -40,8 +40,10 @@ function set_page() {
         page = 'Teachers';
     } else if (app_url.includes('parent-word.html')) {
         page = 'Parent\'s Words';
+        load_parent_words(5);
     } else if (app_url.includes('student-works.html')) {
         page = 'Student Works';
+        load_student_work(9);
     } else if (app_url.includes('contact.html')) {
         page = 'Contact';
     }
@@ -83,4 +85,37 @@ function set_page() {
     $('.copyright-msg').html(copyright);
 
     
+}
+
+
+function load_student_work(max_photo = 10) {
+
+    for(i=max_photo; i >= 1; i--){
+        $('.student-works').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/xx'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
+    }
+}
+
+
+function load_achievements(max_photo = 10) {
+
+    for(i=max_photo; i >= 1; i--){
+        $('.achievements').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/cj'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
+    }
+}
+
+
+
+function load_parent_words(max_photo = 10) {
+
+    for(i=max_photo; i >= 1; i--){
+        $('.parent-words').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/parents/jz'+i+'.jpg" alt="..." width="640" height="1370"></div></div></div>');
+    }
+}
+
+
+function load_celebrations(max_photo = 10) {
+
+    for(i=max_photo; i >= 1; i--){
+        $('.celebrations').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/jq'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
+    }
 }
