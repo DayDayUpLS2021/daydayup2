@@ -24,6 +24,8 @@ function set_page() {
     // $('.app_reviews').hide();
     // $('.app_reviews_chevron').hide();
 
+    $('.app_celebrations_control').hide();
+
     if (app_url.includes('about.html')) {
         page = 'About';
     }else if (app_url.includes('timetable.html')) {
@@ -46,6 +48,12 @@ function set_page() {
         load_student_work(9);
     } else if (app_url.includes('contact.html')) {
         page = 'Contact';
+    } else if (app_url.includes('achievements.html')) {
+        page = 'Achievements';
+        load_achievements(9);
+    } else if (app_url.includes('celebrations.html')) {
+        page = 'Celebrations';
+        load_celebrations(42);
     }
 
     const app_title = page + ' - ' + app_name;
@@ -99,7 +107,7 @@ function load_student_work(max_photo = 10) {
 function load_achievements(max_photo = 10) {
 
     for(i=max_photo; i >= 1; i--){
-        $('.achievements').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/cj'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
+        $('.achievements').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/achievements/cj'+i+'.jpg" alt="..." width="640" height="850"></div></div></div>');
     }
 }
 
@@ -116,6 +124,6 @@ function load_parent_words(max_photo = 10) {
 function load_celebrations(max_photo = 10) {
 
     for(i=max_photo; i >= 1; i--){
-        $('.celebrations').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/jq'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
+        $('.celebrations').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/celebrations/jq'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
     }
 }
