@@ -11,7 +11,7 @@ function set_page() {
     const app_url = window.location.href;
     let app_name = "天天向上语文学校\nDayDayUp Language School";
     var outlet_arr = [
-        ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846 <br/><br/><strong>Phone:</strong> 6530 3063<br/><strong>WhatsApp:</strong> +65 8151 5668<br/><strong>Email:</strong> daydayupls21@gmail.com','assets/attachment/daydayup1.jpg']
+        ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846 <br/><br/>郑娟老师👩‍🏫 华文热线咨询<br/><strong>Phone:</strong> 91669059 （每日）9am-9pm<br/><br/><strong>Tel:</strong> 6530 3063<br/><strong>WhatsApp:</strong> +65 8151 5668<br/><strong>Email:</strong> daydayupls21@gmail.com','assets/attachment/daydayup1.jpg']
     ];
 
     var timestamp = new Date().getTime();
@@ -41,16 +41,16 @@ function set_page() {
     } else if (app_url.includes('teachers.html')) {
         page = 'Teachers';
     } else if (app_url.includes('parent-word.html')) {
-        page = 'Parent\'s Words';
+        page = 'Parents & Students Words';
         load_parent_words(5);
     } else if (app_url.includes('student-works.html')) {
         page = 'Student Works';
-        load_student_work(9);
+        load_student_work(12, 4);
     } else if (app_url.includes('contact.html')) {
         page = 'Contact';
     } else if (app_url.includes('achievements.html')) {
         page = 'Achievements';
-        load_achievements(9);
+        load_achievements(11);
     } else if (app_url.includes('celebrations.html')) {
         page = 'Celebrations';
         load_celebrations(42);
@@ -96,13 +96,15 @@ function set_page() {
 }
 
 
-function load_student_work(max_photo = 10) {
+function load_student_work(max_photo = 10, max_photo_ver = 10) {
 
     for(i=max_photo; i >= 1; i--){
         $('.student-works').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/xx'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
     }
 
-    $('.student-works').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/xxx1.jpg" alt="..." width="640" height="1100"></div></div></div>');
+    for(i=max_photo_ver; i >= 1; i--){
+        $('.student-works').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/xxx'+i+'.jpg" alt="..." width="640" height="1100"></div></div></div>');
+    }
 }
 
 
