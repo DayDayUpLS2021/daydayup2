@@ -71,7 +71,7 @@ function set_page() {
     $('.app_teacher').text('Teachers');
     $('.app_reviews').text('Reviews');
     $('.app_student_work').text('Student Works');
-    $('.app_parent_word').text('Parents\' Words');
+    $('.app_parent_word').text('Parents & Students Words');
     $('.app_contact').text('Contact');
     $('.get-started-btn').text('Get Started');
 
