@@ -29,7 +29,7 @@ function set_page() {
     if (app_url.includes('about.html')) {
         page = 'About';
     }else if (app_url.includes('timetable.html')) {
-        page = 'Timetable';
+        page = 'Calendar';
     } else if (app_url.includes('classes.html')) {
         page = 'Classes';
         load_max_ppl_msg();
@@ -64,7 +64,7 @@ function set_page() {
     //header tab title
     $('.app_home').text('Home');
     $('.app_about').text('About');
-    $('.app_timetable').text('Timetable');
+    $('.app_timetable').text('Calendar');
     $('.app_programmes').text('Programmes');
     $('.app_class').text('Classes');
     $('.app_class_holiday').text('Holiday Classes');
@@ -136,5 +136,5 @@ function load_celebrations(max_photo = 10) {
 function load_max_ppl_msg(){
     
     $('.max-ppl-msg').html('Max 9 Students/timeslot<br/>每堂至多9人');
-    
+
 }
