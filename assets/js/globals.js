@@ -32,6 +32,7 @@ function set_page() {
         page = 'Timetable';
     } else if (app_url.includes('classes.html')) {
         page = 'Classes';
+        load_max_ppl_msg();
     } else if (app_url.includes('class-details.html')) {
         page = 'Class Details';
     } else if (app_url.includes('classes-holiday.html')) {
@@ -52,7 +53,7 @@ function set_page() {
         page = 'Achievements';
         load_achievements(11);
     } else if (app_url.includes('celebrations.html')) {
-        page = 'Celebrations';
+        page = 'Gathering';
         load_celebrations(42);
     }
 
@@ -130,4 +131,10 @@ function load_celebrations(max_photo = 10) {
     for(i=max_photo; i >= 1; i--){
         $('.celebrations').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/celebrations/jq'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
     }
+}
+
+function load_max_ppl_msg(){
+    
+    $('.max-ppl-msg').html('Max 9 Students/timeslot<br/>每堂至多9人');
+    
 }
