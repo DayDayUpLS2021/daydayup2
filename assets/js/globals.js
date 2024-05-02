@@ -16,7 +16,11 @@ function set_page() {
 
     var timestamp = new Date().getTime();
     var cssUrl = "assets/css/style.css?v=" + timestamp;
+    var jsUrl2 = "assets/js/class_detl.js?v=" + timestamp;
+    var jsUrl3 = "assets/js/holiday_class_detl.js?v=" + timestamp;
     document.write('<link rel="stylesheet" href="' + cssUrl + '">');
+    document.write('<script src="' + jsUrl2 + '"></script>');
+    document.write('<script src="' + jsUrl3 + '"></script>');
 
 
     let page = 'Home';
