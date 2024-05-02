@@ -21,11 +21,6 @@ function set_page() {
 
     let page = 'Home';
 
-    // $('.app_reviews').hide();
-    // $('.app_reviews_chevron').hide();
-
-    $('.app_celebrations_control').hide();
-
     if (app_url.includes('about.html')) {
         page = 'About';
     }else if (app_url.includes('timetable.html')) {
@@ -52,9 +47,9 @@ function set_page() {
     } else if (app_url.includes('achievements.html')) {
         page = 'Achievements';
         load_achievements(11);
-    } else if (app_url.includes('celebrations.html')) {
+    } else if (app_url.includes('gathering.html')) {
         page = 'Gathering';
-        load_celebrations(42);
+        load_gathering(13, 11, 34);//jh | jhs | jhv
     }
 
     const app_title = page + ' - ' + app_name;
@@ -126,15 +121,23 @@ function load_parent_words(max_photo = 10) {
 }
 
 
-function load_celebrations(max_photo = 10) {
+function load_gathering(max_jh_photo = 10, max_jhs_photo = 10, max_jhv_photo = 10) {
 
-    for(i=max_photo; i >= 1; i--){
-        $('.celebrations').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/celebrations/jq'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
+    for(i=max_jh_photo; i >= 1; i--){
+        $('.gatherings').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/gathering/jh/jh'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
+    }
+
+    for(i=max_jhs_photo; i >= 1; i--){
+        $('.gatherings').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/gathering/jhs/jhs'+i+'.jpg" alt="..." width="640" height="850"></div></div></div>');
+    }
+
+    for(i=max_jhv_photo; i >= 1; i--){
+        $('.gatherings').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/gathering/jhv/jhv'+i+'.jpg" alt="..." width="640" height="1370"></div></div></div>');
     }
 }
 
 function load_max_ppl_msg(){
     
-    $('.max-ppl-msg').html('Max 9 Students/timeslot<br/>每堂至多9人');
+    $('.max-ppl-msg').html('Max 9 Students/timeslot<br/>最大班额9人');
 
 }
