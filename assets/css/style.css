@@ -1615,3 +1615,8 @@ section {
 .text-right {
   text-align: right;
 }
+
+
+.carousel-item {
+  transition: transform 6s ease, opacity 6s ease-in-out;
+}
