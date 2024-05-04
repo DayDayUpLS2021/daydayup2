@@ -42,7 +42,7 @@ function set_page() {
         page = 'Teachers';
     } else if (app_url.includes('parent-word.html')) {
         page = 'Parents & Students Words';
-        load_parent_words(5);
+        load_parent_words(1, 5);
     } else if (app_url.includes('student-works.html')) {
         page = 'Student Works';
         load_student_work(12, 4);
@@ -116,11 +116,16 @@ function load_achievements(max_photo = 10) {
 }
 
 
+//students & parents
+function load_parent_words(max_photo_xsjz = 10, max_photo_xsjzv = 10) {
 
-function load_parent_words(max_photo = 10) {
+    for(i=max_photo_xsjzv; i >= 1; i--){
+        $('.parent-words').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/parents/xsjzv'+i+'.jpg" alt="..." width="640" height="1370"></div></div></div>');
+    }
 
-    for(i=max_photo; i >= 1; i--){
-        $('.parent-words').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/parents/jz'+i+'.jpg" alt="..." width="640" height="1370"></div></div></div>');
+
+    for(i=max_photo_xsjz; i >= 1; i--){
+        $('.parent-words').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/parents/xsjz'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
     }
 }
 
