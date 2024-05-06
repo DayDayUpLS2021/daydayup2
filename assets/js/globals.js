@@ -42,10 +42,10 @@ function set_page() {
         page = 'Teachers';
     } else if (app_url.includes('parent-word.html')) {
         page = 'Parents & Students Words';
-        load_parent_words(1, 5);
+        load_parent_words(1, 11); //xsjz | xsjzv
     } else if (app_url.includes('student-works.html')) {
         page = 'Student Works';
-        load_student_work(12, 4);
+        load_student_work(12, 4);//xx | xxv
     } else if (app_url.includes('contact.html')) {
         page = 'Contact';
     } else if (app_url.includes('achievements.html')) {
@@ -53,7 +53,7 @@ function set_page() {
         load_achievements(11);
     } else if (app_url.includes('gathering.html')) {
         page = 'Gathering';
-        load_gathering(13, 11, 34);//jh | jhs | jhv
+        load_gathering(15, 11, 33);//jh | jhs | jhv
     }
 
     const app_title = page + ' - ' + app_name;
@@ -96,14 +96,14 @@ function set_page() {
 }
 
 
-function load_student_work(max_photo = 10, max_photo_ver = 10) {
+function load_student_work(max_photo_xx = 10, max_photo_xxv = 10) {
 
-    for(i=max_photo; i >= 1; i--){
+    for(i=max_photo_xx; i >= 1; i--){
         $('.student-works').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/xx'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
     }
 
-    for(i=max_photo_ver; i >= 1; i--){
-        $('.student-works').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/xxx'+i+'.jpg" alt="..." width="640" height="1100"></div></div></div>');
+    for(i=max_photo_xxv; i >= 1; i--){
+        $('.student-works').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/xxv'+i+'.jpg" alt="..." width="640" height="1100"></div></div></div>');
     }
 }
 
