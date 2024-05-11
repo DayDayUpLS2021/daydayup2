@@ -9,7 +9,7 @@
 
 function set_page() {
     const app_url = window.location.href;
-    let app_name = "天天向上语文学校\nDayDayUp Language School";
+
     var outlet_arr = [
         ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846 <br/><br/>郑娟老师👩‍🏫 华文热线咨询<br/><strong>Phone:</strong> 91669059 （每日）9am-9pm<br/><br/><strong>Tel:</strong> 6530 3063<br/><strong>WhatsApp:</strong> +65 8151 5668<br/><strong>Email:</strong> daydayupls21@gmail.com','assets/attachment/daydayup1.jpg']
     ];
@@ -56,9 +56,11 @@ function set_page() {
         load_gathering(15, 11, 33);//jh | jhs | jhv
     }
 
-    const app_title = page + ' - ' + app_name;
-    document.title = app_title;
-    $('.app_name').text(app_name);
+    updateAppName(page);
+
+    $(window).resize(function() {
+        updateAppName(page);  // Update on window resize
+    });
 
     //header tab title
     $('.app_home').text('Home');
@@ -149,4 +151,31 @@ function load_max_ppl_msg(){
     
     $('.max-ppl-msg').html('Max 9 Students/timeslot<br/>最大班额9人');
 
+}
+
+function updateAppName(page) {
+
+    const window_width = $(window).width();
+    let app_name = "天天向上语文学校\nDayDayUp Language School";
+    var app_name_size = 25;
+    var index_title_size = 48;
+    var index_content_size = 24;
+
+    // if (window_width < 1200 && window_width > 990) {  // Assumes 768px is your breakpoint for mobile devices
+    //     // app_name = "天天向上语文学校";  // Shorter name for mobile
+    //     app_name_size = 20;
+    //     index_title_size = 20;
+    // } else 
+    if (window_width < 768) {  // Assumes 768px is your breakpoint for mobile devices
+        // app_name = "天天向上语文学校";  // Shorter name for mobile
+        app_name_size = 20;
+        index_title_size = 20;
+        index_content_size = 18;
+    } 
+    
+    $('.app_name').text(app_name);  // Update all elements with class 'app_name'
+    $('.app_name').css('font-size', app_name_size + 'px');  // Update font size
+    $('.index_title').css('font-size', app_name_size + 'px');  // Update font size
+    $('.index_content').css('font-size', app_name_size + 'px');  // Update font size
+    document.title = page + ' - ' + app_name;  // Update the page title if needed
 }
