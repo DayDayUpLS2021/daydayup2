@@ -42,7 +42,7 @@ function set_page() {
         page = 'Teachers';
     } else if (app_url.includes('parent-word.html')) {
         page = 'Parents & Students Words';
-        load_parent_words(1, 11); //xsjz | xsjzv
+        load_parent_words(1, 12); //xsjz | xsjzv
     } else if (app_url.includes('student-works.html')) {
         page = 'Student Works';
         load_student_work(12, 4);//xx | xxv
