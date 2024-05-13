@@ -50,10 +50,10 @@ function set_page() {
         page = 'Contact';
     } else if (app_url.includes('achievements.html')) {
         page = 'Achievements';
-        load_achievements(11);
+        load_achievements(12); //cj
     } else if (app_url.includes('gathering.html')) {
         page = 'Gathering';
-        load_gathering(15, 11, 33);//jh | jhs | jhv
+        load_gathering(1, 15, 12, 33);//jhsp | jh | jhs | jhv
     }
 
     updateAppName(page);
@@ -132,7 +132,11 @@ function load_parent_words(max_photo_xsjz = 10, max_photo_xsjzv = 10) {
 }
 
 
-function load_gathering(max_jh_photo = 10, max_jhs_photo = 10, max_jhv_photo = 10) {
+function load_gathering(max_jhsp_video = 10, max_jh_photo = 10, max_jhs_photo = 10, max_jhv_photo = 10) {
+
+    for(i=max_jhsp_video; i >= 1; i--){
+        $('.gatherings').append('<div class="col-md-12 d-flex align-items-stretch video-container"><div class="card"><div class="card-img"><video id="jh_video' + i + '" onplay="updateButtonIcon(\'jh_video'+i+'\', \'pause\')" onpause="updateButtonIcon(\'jh_video'+i+'\', \'play\')" onended="updateButtonIcon(\'jh_video'+i+'\', \'play\')"><source src="assets/img/gathering/jhsp/jhsp' + i + '.mp4" type="video/mp4" preload="metadata"></video><div class="controls"><button class="btn btn-success bi bi-play-fill" id="btn_jh_video'+i+'" onclick="togglePlay(\'jh_video' + i + '\')"></button><div class="progress-bar" onclick="setVideoProgress(event, \'progress_jh_video'+i+'\')"><div class="progress" id="progress_jh_video'+i+'"></div></div></div></div></div>');
+    }
 
     for(i=max_jh_photo; i >= 1; i--){
         $('.gatherings').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/gathering/jh/jh'+i+'.jpg" alt="..." width="640" height="360"></div></div></div>');
@@ -145,6 +149,19 @@ function load_gathering(max_jh_photo = 10, max_jhs_photo = 10, max_jhv_photo = 1
     for(i=max_jhv_photo; i >= 1; i--){
         $('.gatherings').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/gathering/jhv/jhv'+i+'.jpg" alt="..." width="640" height="1370"></div></div></div>');
     }
+
+    // Attach event listeners after elements have been added
+    $('video').each(function() {
+        this.onplay = () => updateButtonIcon(this.id, 'pause');
+        this.onpause = () => updateButtonIcon(this.id, 'play');
+        this.onended = () => updateButtonIcon(this.id, 'play');
+        this.ontimeupdate = () => updateProgress(this.id);
+    });
+
+    // Prevent right-click on all video elements
+    $('video').on('contextmenu', function(e) {
+        e.preventDefault();
+    });
 }
 
 function load_max_ppl_msg(){
@@ -178,4 +195,40 @@ function updateAppName(page) {
     $('.index_title').css('font-size', app_name_size + 'px');  // Update font size
     $('.index_content').css('font-size', app_name_size + 'px');  // Update font size
     document.title = page + ' - ' + app_name;  // Update the page title if needed
+}
+
+
+
+function togglePlay(videoId) {
+    const video = document.getElementById(videoId);
+    if (video.paused || video.ended) {
+        video.play();
+    } else {
+        video.pause();
+    }
+}
+
+
+function updateButtonIcon(videoId, state) {
+    const buttonIcon = document.querySelector('#btn_'+videoId);
+    if (state === 'play') {
+        buttonIcon.className = 'btn btn-success bi bi-play-fill';
+    } else {
+        buttonIcon.className = 'btn btn-success bi bi-pause-fill';
+    }
+}
+
+
+function updateProgress(videoId) {
+    const video = document.getElementById(videoId);
+    const progress = document.getElementById('progress_' + videoId);
+    const value = (video.currentTime / video.duration) * 100;
+    progress.style.width = `${value}%`;
+}
+
+function setVideoProgress(e, videoId) {
+    const video = document.getElementById(videoId);
+    const progressBar = e.currentTarget;
+    const clickPosition = (e.pageX - progressBar.offsetLeft) / progressBar.offsetWidth;
+    video.currentTime = clickPosition * video.duration;
 }
