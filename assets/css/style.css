@@ -439,13 +439,7 @@ h6 {
   padding-top: 72px;
 }
 
-@media (max-width: 992px) {
-  #hero .container,
-  #hero2 .container, 
-  #hero3 .container {
-    padding-top: 62px;
-  }
-}
+
 
 #hero h1, 
 #hero2 h1, 
@@ -489,13 +483,6 @@ h6 {
   border: 2px solid #5fcf80;
 }
 
-@media (min-width: 1024px) {
-  #hero, 
-  #hero2, 
-  #hero3 {
-    background-attachment: fixed;
-  }
-}
 
 @media (max-width: 768px) {
   #hero, 
@@ -519,7 +506,22 @@ h6 {
   }
 }
 
+@media (max-width: 992px) {
+  #hero .container,
+  #hero2 .container, 
+  #hero3 .container {
+    padding-top: 62px;
+  }
+}
 
+
+@media (min-width: 1024px) {
+  #hero, 
+  #hero2, 
+  #hero3 {
+    background-attachment: fixed;
+  }
+}
 
 
 /*--------------------------------------------------------------
