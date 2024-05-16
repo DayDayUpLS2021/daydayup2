@@ -42,7 +42,7 @@ function set_page() {
         page = 'Teachers';
     } else if (app_url.includes('parent-word.html')) {
         page = 'Parents & Students Words';
-        load_parent_words(1, 12); //xsjz | xsjzv
+        load_parent_words(1, 16); //xsjz | xsjzv
     } else if (app_url.includes('student-works.html')) {
         page = 'Student Works';
         load_student_work(12, 4);//xx | xxv
@@ -50,7 +50,7 @@ function set_page() {
         page = 'Contact';
     } else if (app_url.includes('achievements.html')) {
         page = 'Achievements';
-        load_achievements(12); //cj
+        load_achievements(14); //cj
     } else if (app_url.includes('gathering.html')) {
         page = 'Gathering';
         load_gathering(1, 15, 12, 33);//jhsp | jh | jhs | jhv
