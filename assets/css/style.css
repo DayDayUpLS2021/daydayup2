@@ -572,11 +572,17 @@ section {
 }
 
 .breadcrumbs {
-  margin-top: 73px !important;
+  margin-top: 103px !important;
   text-align: center;
   background: #5fcf80;
   padding: 30px 0;
   color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .breadcrumbs {
+    margin-top: 163px !important;
+  }
 }
 
 @media (max-width: 992px) {
