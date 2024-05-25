@@ -410,14 +410,17 @@ h6 {
 
 #hero {
   background: url("../img/home/home1.png") top center;
+  background-repeat: no-repeat;
 }
 
 #hero2 {
   background: url("../img/home/home2.png") top center;
+  background-repeat: no-repeat;
 }
 
 #hero3 {
   background: url("../img/home/home3.png") top center;
+  background-repeat: no-repeat;
 }
 
 
