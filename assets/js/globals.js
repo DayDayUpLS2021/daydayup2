@@ -78,7 +78,7 @@ function set_page() {
     $('.get-started-btn').text('Get Started');
 
 
-    var contact = '<br/><br/>郑娟老师👩‍🏫 华文热线咨询<br/><strong>Phone:</strong> 91669059 （每日）9am-9pm<br/><br/><strong>Tel:</strong> 6530 3063<br/><strong>WhatsApp:</strong> +65 8151 5668<br/><strong>Email:</strong> daydayupls21@gmail.com';
+    var contact = '<br/>郑娟老师👩‍🏫 华文热线咨询<br/><strong>Phone:</strong> 91669059 （每日）9am-9pm<br/><br/><strong>Tel:</strong> 6530 3063<br/><strong>WhatsApp:</strong> <a  onclick="window.open(\'https://api.whatsapp.com/send?phone=6581515668\', \'_blank\')">+65 8151 5668</a><br/><strong>Email:</strong> daydayupls21@gmail.com';
 
     var copyright = 'All images on this website are copyrighted by their respective owners. We respect the copyrights of others and do not knowingly infringe on them. If you believe that any of the images on this website infringes on your copyright, please contact us and we will remove it immediately.';
 
@@ -103,7 +103,6 @@ function set_page() {
         html += '</div>';//close col-lg-6
         html += '<div class="col-lg-6 text-center">';
 
-        // const whatapp_api = 'https://api.whatsapp.com/send?phone=6581515668';
 
         outlet_arr.forEach((outlet, key) => {
 
