@@ -11,8 +11,9 @@ function set_page() {
     const app_url = window.location.href;
 
     var outlet_arr = [
-        ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846 <br/><br/>郑娟老师👩‍🏫 华文热线咨询<br/><strong>Phone:</strong> 91669059 （每日）9am-9pm<br/><br/><strong>Tel:</strong> 6530 3063<br/><strong>WhatsApp:</strong> +65 8151 5668<br/><strong>Email:</strong> daydayupls21@gmail.com','assets/attachment/daydayup1.jpg']
-    ];
+        ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846','assets/attachment/daydayup4.jpg', 1.418493624867837, 103.83487635665111],
+        ['Beauty World', '170 Upper Bukit Timah Rd #B2-18 Shopping Centre <br/>Singapore 588179', 'assets/attachment/daydayup4.jpg', 1.3465884525840761, 103.7758248494758]
+    ];    
 
     var timestamp = new Date().getTime();
     var cssUrl = "assets/css/style.css?v=" + timestamp;
@@ -77,14 +78,51 @@ function set_page() {
     $('.get-started-btn').text('Get Started');
 
 
+    var contact = '<br/><br/>郑娟老师👩‍🏫 华文热线咨询<br/><strong>Phone:</strong> 91669059 （每日）9am-9pm<br/><br/><strong>Tel:</strong> 6530 3063<br/><strong>WhatsApp:</strong> +65 8151 5668<br/><strong>Email:</strong> daydayupls21@gmail.com';
+
     var copyright = 'All images on this website are copyrighted by their respective owners. We respect the copyrights of others and do not knowingly infringe on them. If you believe that any of the images on this website infringes on your copyright, please contact us and we will remove it immediately.';
 
-    
+    var app_name = $(".app_name:first").html();
+
+
+    $('.contact_list').html(contact);
+
     if(app_url.includes('contact.html')){
         var html = '';
+
+        var area = '';
+        var address = '';
+        var img = 'assets/attachment/daydayup4.jpg';
+
+        html += '<div class="footer-top">';
+        html += '<div class="container">';
+        html += '<div class="row">';
+        html += '<div class="col-lg-6 text-center">';
+        html += '<div class="col-lg-12 footer-contact"><a href="javascript:void(0)" class="app_name_0" style="font-size:1.75rem;" onclick="resetMap()" >'+app_name+'</a></div>';
+        html += '<div class="col-lg-12 footer-contact"><img src="'+img+'" class="img-fluid app_img_0" onclick="resetMap()"></div>';
+        html += '</div>';//close col-lg-6
+        html += '<div class="col-lg-6 text-center">';
+
+        // const whatapp_api = 'https://api.whatsapp.com/send?phone=6581515668';
+
         outlet_arr.forEach((outlet, key) => {
-            html += '<div class="footer-top"><div class="container"><div class="row"><div class="col-lg-4 footer-contact"><h3 class="app_name_'+key+'">'+app_name+' ('+outlet[0]+')'+'</h3></div><div class="col-lg-4 footer-contact"><p class="app_address_'+key+'">'+outlet[1]+'</p></div><div class="col-lg-4 footer-contact"><img src="'+outlet[2]+'" class="img-fluid app_img_'+key+'"></div></div></div></div>';
+
+            area = '<a href="javascript:void(0)" onclick="pointToLocation(' + outlet[3] + ', ' + outlet[4] + ')">'+outlet[0].toUpperCase()+'</a><br/>';
+            address = outlet[1];
+            img = outlet[2];
+
+            // html += '<div class="footer-top"><div class="container"><div class="row"><div class="col-lg-4 footer-contact"><h3 class="app_name_'+key+'">'+app_name+area+'</h3></div><div class="col-lg-4 footer-contact"><p class="app_address_'+key+'">'+address+'</p></div><div class="col-lg-4 footer-contact"><img src="'+img+'" class="img-fluid app_img_'+key+'"></div></div></div></div>';
+
+
+            html += '<div class="col-lg-12 footer-contact">'+area+'<p class="app_address_'+key+'">'+address+'</p></div>';
+
         });
+
+        html += '</div>';//close col-lg-6
+        html += '</div>';//close row
+        html += '</div>';//close container
+        html += '</div>';//close footer-top
+  
         html += '<div class="footer-top"><div class="container"><div class="copyright-msg">'+copyright+'</div></div></div>';
         $('#footer').html(html);
     }else{
@@ -231,4 +269,16 @@ function setVideoProgress(e, videoId) {
     const progressBar = e.currentTarget;
     const clickPosition = (e.pageX - progressBar.offsetLeft) / progressBar.offsetWidth;
     video.currentTime = clickPosition * video.duration;
+}
+
+
+function pointToLocation(lat, lng) {
+    var iframe = document.getElementById('custom_map');
+    iframe.src = `https://www.google.com/maps/d/u/0/embed?mid=1Feh5ETZFq3C4TCF-OrgH1DXUp1rSjbA&ehbc=2E312F&noprof=1&ll=${lat},${lng}&z=15`;
+}
+
+
+function resetMap() {
+    var iframe = document.getElementById('custom_map');
+    iframe.src = 'https://www.google.com/maps/d/u/0/embed?mid=1Feh5ETZFq3C4TCF-OrgH1DXUp1rSjbA&ehbc=2E312F&noprof=1';
 }

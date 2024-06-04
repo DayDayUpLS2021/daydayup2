@@ -524,6 +524,21 @@ h6 {
   #hero3 {
     background-attachment: fixed;
   }
+
+  #hero {
+    background: url("../img/home/home1-2.png") top center;
+    background-repeat: no-repeat;
+  }
+  
+  #hero2 {
+    background: url("../img/home/home2-2.png") top center;
+    background-repeat: no-repeat;
+  }
+  
+  #hero3 {
+    background: url("../img/home/home3-2.png") top center;
+    background-repeat: no-repeat;
+  }
 }
 
 
@@ -1485,7 +1500,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   color: #37423b;
-  font-size: 14px;
+  font-size: 18px;
   background: #eef0ef;
 }
 
@@ -1507,7 +1522,7 @@ section {
 }
 
 #footer .footer-top .footer-contact p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Raleway", sans-serif;
@@ -1515,7 +1530,7 @@ section {
 }
 
 #footer .footer-top h4 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   color: #444444;
   position: relative;
