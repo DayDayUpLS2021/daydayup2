@@ -1500,7 +1500,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   color: #37423b;
-  font-size: 18px;
+  font-size: 20px;
   background: #eef0ef;
 }
 
@@ -1522,7 +1522,7 @@ section {
 }
 
 #footer .footer-top .footer-contact p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Raleway", sans-serif;
@@ -1530,7 +1530,7 @@ section {
 }
 
 #footer .footer-top h4 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   color: #444444;
   position: relative;
@@ -1678,6 +1678,9 @@ section {
   text-align: right;
 }
 
+.text-middle {
+  text-align: middle;
+}
 
 .carousel-item {
   transition: transform 5s ease, opacity 5s ease-in-out;

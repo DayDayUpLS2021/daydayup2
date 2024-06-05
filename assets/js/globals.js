@@ -11,10 +11,11 @@ function set_page() {
     const app_url = window.location.href;
 
     var outlet_arr = [
-        ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846','assets/attachment/daydayup4.jpg', 1.418493624867837, 103.83487635665111],
-        ['Beauty World', '170 Upper Bukit Timah Rd #B2-18 Shopping Centre <br/>Singapore 588179', 'assets/attachment/daydayup4.jpg', 1.3465884525840761, 103.7758248494758]
+        ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846','assets/attachment/daydayup5.jpg', 1.418493624867837, 103.83487635665111],
+        ['Bukit Timah Shopping Centre', '170 Upper Bukit Timah Rd #B2-18 <br/>Singapore 588179', 'assets/attachment/daydayup5.jpg', 1.3431329504325333, 103.77607953714467],
+        ['West Coast Drive', '1 W Coast Dr <br/>Singapore 128020', 'assets/attachment/daydayup5.jpg', 1.3165519381288215, 103.75739630914103]
     ];    
-
+    
     var timestamp = new Date().getTime();
     var cssUrl = "assets/css/style.css?v=" + timestamp;
     var jsUrl2 = "assets/js/class_detl.js?v=" + timestamp;
@@ -57,7 +58,8 @@ function set_page() {
         load_gathering(1, 15, 12, 33);//jhsp | jh | jhs | jhv
     }
 
-    updateAppName(page);
+    let app_name = "天天向上语文学校<br/>DayDayUp Language School";
+    updateAppName(page, app_name);
 
     $(window).resize(function() {
         updateAppName(page);  // Update on window resize
@@ -82,8 +84,6 @@ function set_page() {
 
     var copyright = 'All images on this website are copyrighted by their respective owners. We respect the copyrights of others and do not knowingly infringe on them. If you believe that any of the images on this website infringes on your copyright, please contact us and we will remove it immediately.';
 
-    var app_name = $(".app_name:first").html();
-
 
     $('.contact_list').html(contact);
 
@@ -92,21 +92,20 @@ function set_page() {
 
         var area = '';
         var address = '';
-        var img = 'assets/attachment/daydayup4.jpg';
+        var img = 'assets/attachment/daydayup5.jpg';
 
         html += '<div class="footer-top">';
         html += '<div class="container">';
         html += '<div class="row">';
-        html += '<div class="col-lg-6 text-center">';
-        html += '<div class="col-lg-12 footer-contact"><a href="javascript:void(0)" class="app_name_0" style="font-size:1.75rem;" onclick="resetMap()" >'+app_name+'</a></div>';
+        html += '<div class="col-lg-6 text-center text-middle">';
+        html += '<div class="col-lg-12 footer-contact"><a href="javascript:void(0)" class="app_name_0" style="font-size:1.75rem;" onclick="resetMap()" >'+app_name+' <i class="bi bi-pin-map-fill"></i></a></div>';
         html += '<div class="col-lg-12 footer-contact"><img src="'+img+'" class="img-fluid app_img_0" onclick="resetMap()"></div>';
         html += '</div>';//close col-lg-6
         html += '<div class="col-lg-6 text-center">';
 
-
         outlet_arr.forEach((outlet, key) => {
 
-            area = '<a href="javascript:void(0)" onclick="pointToLocation(' + outlet[3] + ', ' + outlet[4] + ')">'+outlet[0].toUpperCase()+'</a><br/>';
+            area = '<a href="javascript:void(0)" onclick="pointToLocation(' + outlet[3] + ', ' + outlet[4] + ')">'+outlet[0].toUpperCase()+' <i class="bi bi-pin-map"></i></a><br/>';
             address = outlet[1];
             img = outlet[2];
 
@@ -125,7 +124,7 @@ function set_page() {
         html += '<div class="footer-top"><div class="container"><div class="copyright-msg">'+copyright+'</div></div></div>';
         $('#footer').html(html);
     }else{
-        $('.app_address').html(outlet_arr[0][1]);
+        $('.app_address').html(outlet_arr[0][1]+'<br/>'+contact);
     }
     
 
@@ -207,27 +206,15 @@ function load_max_ppl_msg(){
 
 }
 
-function updateAppName(page) {
+function updateAppName(page, app_name) {
 
-    const window_width = $(window).width();
-    let app_name = "天天向上语文学校\nDayDayUp Language School";
+    const window_width = $(window).width();    
     var app_name_size = 25;
     var index_title_size = 48;
     var index_content_size = 24;
 
-    // if (window_width < 1200 && window_width > 990) {  // Assumes 768px is your breakpoint for mobile devices
-    //     // app_name = "天天向上语文学校";  // Shorter name for mobile
-    //     app_name_size = 20;
-    //     index_title_size = 20;
-    // } else 
-    if (window_width < 768) {  // Assumes 768px is your breakpoint for mobile devices
-        // app_name = "天天向上语文学校";  // Shorter name for mobile
-        app_name_size = 20;
-        index_title_size = 20;
-        index_content_size = 18;
-    } 
     
-    $('.app_name').text(app_name);  // Update all elements with class 'app_name'
+    $('.app_name').html(app_name);  // Update all elements with class 'app_name'
     $('.app_name').css('font-size', app_name_size + 'px');  // Update font size
     $('.index_title').css('font-size', app_name_size + 'px');  // Update font size
     $('.index_content').css('font-size', app_name_size + 'px');  // Update font size
