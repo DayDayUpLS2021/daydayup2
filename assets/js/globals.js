@@ -13,7 +13,7 @@ function set_page() {
     var outlet_arr = [
         ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846','assets/attachment/daydayup5.jpg', 1.418493624867837, 103.83487635665111],
         ['Bukit Timah Shopping Centre', '170 Upper Bukit Timah Rd #B2-18 <br/>Singapore 588179', 'assets/attachment/daydayup5.jpg', 1.3431329504325333, 103.77607953714467],
-        ['West Coast Drive', '1 W Coast Dr <br/>Singapore 128020', 'assets/attachment/daydayup5.jpg', 1.3165519381288215, 103.75739630914103]
+        ['New West', '1 W Coast Dr <br/>Singapore 128020', 'assets/attachment/daydayup5.jpg', 1.3165519381288215, 103.75739630914103]
     ];    
     
     var timestamp = new Date().getTime();
