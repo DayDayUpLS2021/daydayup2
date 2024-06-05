@@ -524,6 +524,10 @@ h6 {
   #hero3 {
     background-attachment: fixed;
   }
+}
+
+
+@media (min-width: 1200px) {
 
   #hero {
     background: url("../img/home/home1-2.png") top center;
