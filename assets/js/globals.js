@@ -59,10 +59,11 @@ function set_page() {
     }
 
     let app_name = "天天向上语文学校<br/>DayDayUp Language School";
-    updateAppName(page, app_name);
+    let app_name2 = "天天向上语文学校<br/>DayDayUp Language School";
+    updateAppName(page, app_name, app_name2);
 
     $(window).resize(function() {
-        updateAppName(page);  // Update on window resize
+        updateAppName(page, app_name, app_name2);  // Update on window resize
     });
 
     //header tab title
@@ -206,21 +207,18 @@ function load_max_ppl_msg(){
 
 }
 
-function updateAppName(page, app_name) {
+function updateAppName(page, app_name, app_name2) {
 
     const window_width = $(window).width();    
     var app_name_size = 25;
-    var index_title_size = 48;
-    var index_content_size = 24;
 
     
     $('.app_name').html(app_name);  // Update all elements with class 'app_name'
     $('.app_name').css('font-size', app_name_size + 'px');  // Update font size
     $('.index_title').css('font-size', app_name_size + 'px');  // Update font size
     $('.index_content').css('font-size', app_name_size + 'px');  // Update font size
-    document.title = page + ' - ' + app_name;  // Update the page title if needed
+    document.title = page + ' - ' + app_name2;  // Update the page title if needed
 }
-
 
 
 function togglePlay(videoId) {
