@@ -59,7 +59,7 @@ function set_page() {
     }
 
     let app_name = "天天向上语文学校<br/>DayDayUp Language School";
-    let app_name2 = "天天向上语文学校<br/>DayDayUp Language School";
+    let app_name2 = "天天向上语文学校 DayDayUp Language School";
     updateAppName(page, app_name, app_name2);
 
     $(window).resize(function() {
@@ -211,7 +211,7 @@ function updateAppName(page, app_name, app_name2) {
 
     const window_width = $(window).width();    
     var app_name_size = 25;
-
+    console.log(window_width);
     
     $('.app_name').html(app_name);  // Update all elements with class 'app_name'
     $('.app_name').css('font-size', app_name_size + 'px');  // Update font size
