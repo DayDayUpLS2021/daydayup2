@@ -1,14 +1,19 @@
 
 (function() {
 
-    set_page();
+    const app_url = window.location.href;
 
+    set_page(app_url);
+
+    console.log(app_url);
+    if (app_url.includes('teachers.html') || app_url.includes('index.html') || app_url == 'http://localhost/daydayup2/') {
+        get_teachers();
+    }
 })();
 
 
 
-function set_page() {
-    const app_url = window.location.href;
+function set_page(app_url) {
 
     var outlet_arr = [
         ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846','assets/attachment/daydayup5.jpg', 1.418493624867837, 103.83487635665111],
@@ -211,7 +216,6 @@ function updateAppName(page, app_name, app_name2) {
 
     const window_width = $(window).width();    
     var app_name_size = 25;
-    console.log(window_width);
     
     $('.app_name').html(app_name);  // Update all elements with class 'app_name'
     $('.app_name').css('font-size', app_name_size + 'px');  // Update font size
@@ -265,4 +269,36 @@ function pointToLocation(lat, lng) {
 function resetMap() {
     var iframe = document.getElementById('custom_map');
     iframe.src = 'https://www.google.com/maps/d/u/0/embed?mid=1Feh5ETZFq3C4TCF-OrgH1DXUp1rSjbA&ehbc=2E312F&noprof=1';
+}
+
+function get_teachers() {
+
+    const teacher_arr = [
+        ['郑娟', 'Zheng Juan', 'zhengjuan2.jpg'],
+        ['王爽', 'Wang Shuang', 'wangshuang2.jpg'],
+        ['郑源元', 'Zheng YuanYuan', 'zhengyuanyuan2.jpg'],
+        ['陈宏民', 'Chen HongMin', 'chenhongmin2.jpg'],
+        ['郭辉', 'Guo Hui', 'guohui2.jpg'],
+        ['卓睿庆', 'Zhuo RuiQing', 'zhuoruiqing2.jpg'],
+        ['冯婌清', 'Adeline Pang SooCheng', 'fengshuqing2.jpg'],
+        ['李凌飞', 'Li LingFei', 'lilingfei2.jpg'],
+    ]
+
+    var teacher_html = '';
+    var name_ch = '';
+    var name_en = '';
+    var photo = '';
+
+    teacher_arr.forEach((teacher, key) => {
+
+        name_ch = teacher[0];
+        name_en = teacher[1];
+        photo = teacher[2];
+
+        teacher_html += '<div class="col-lg-4 col-md-6 d-flex align-items-stretch"><div class="member">';
+        teacher_html += '<img src="assets/img/teachers/'+photo+'" class="img-fluid" alt="">';
+        teacher_html += '<div class="member-content"><h4>'+name_ch+'</h4><span>'+name_en+'</span></div></div></div>';
+    });
+    
+    $('#teachers_field').html(teacher_html);
 }
