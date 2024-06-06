@@ -5,9 +5,11 @@
 
     set_page(app_url);
 
-    if (app_url.includes('teachers.html') || app_url.includes('index.html') || app_url == 'http://localhost/daydayup2/' || app_url == 'https://www.daydayupls.sg/') {
+    //if id exist get teachers info
+    if($('#teachers_field').length){
         get_teachers();
     }
+
 })();
 
 
