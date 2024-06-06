@@ -5,8 +5,7 @@
 
     set_page(app_url);
 
-    console.log(app_url);
-    if (app_url.includes('teachers.html') || app_url.includes('index.html') || app_url == 'http://localhost/daydayup2/') {
+    if (app_url.includes('teachers.html') || app_url.includes('index.html') || app_url == 'http://localhost/daydayup2/' || app_url == 'https://www.daydayupls.sg/') {
         get_teachers();
     }
 })();
