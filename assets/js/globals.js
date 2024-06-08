@@ -95,41 +95,9 @@ function set_page(app_url) {
     $('.contact_list').html(contact);
 
     if(app_url.includes('contact.html')){
-        var html = '';
 
-        var area = '';
-        var address = '';
-        var img = 'assets/attachment/daydayup5.jpg';
+        get_outlets(app_name, outlet_arr, copyright, 'map');
 
-        html += '<div class="footer-top">';
-        html += '<div class="container">';
-        html += '<div class="row">';
-        html += '<div class="col-lg-6 text-center text-middle">';
-        html += '<div class="col-lg-12 footer-contact"><a href="javascript:void(0)" class="app_name_0" style="font-size:1.75rem;" onclick="resetMap()" >'+app_name+' <i class="bi bi-pin-map-fill"></i></a></div>';
-        html += '<div class="col-lg-12 footer-contact"><img src="'+img+'" class="img-fluid app_img_0" onclick="resetMap()"></div>';
-        html += '</div>';//close col-lg-6
-        html += '<div class="col-lg-6 text-center">';
-
-        outlet_arr.forEach((outlet, key) => {
-
-            area = '<a href="javascript:void(0)" onclick="pointToLocation(' + outlet[3] + ', ' + outlet[4] + ')">'+outlet[0].toUpperCase()+' <i class="bi bi-pin-map"></i></a><br/>';
-            address = outlet[1];
-            img = outlet[2];
-
-            // html += '<div class="footer-top"><div class="container"><div class="row"><div class="col-lg-4 footer-contact"><h3 class="app_name_'+key+'">'+app_name+area+'</h3></div><div class="col-lg-4 footer-contact"><p class="app_address_'+key+'">'+address+'</p></div><div class="col-lg-4 footer-contact"><img src="'+img+'" class="img-fluid app_img_'+key+'"></div></div></div></div>';
-
-
-            html += '<div class="col-lg-12 footer-contact">'+area+'<p class="app_address_'+key+'">'+address+'</p></div>';
-
-        });
-
-        html += '</div>';//close col-lg-6
-        html += '</div>';//close row
-        html += '</div>';//close container
-        html += '</div>';//close footer-top
-  
-        html += '<div class="footer-top"><div class="container"><div class="copyright-msg">'+copyright+'</div></div></div>';
-        $('#footer').html(html);
     }else{
         $('.app_address').html(outlet_arr[0][1]+'<br/>'+contact);
     }
@@ -302,4 +270,64 @@ function get_teachers() {
     });
     
     $('#teachers_field').html(teacher_html);
+}
+
+
+function get_outlets(app_name, outlet_arr, copyright, type = 'footer'){
+
+
+    var html = '';
+    var html_logo = '';
+    var html_outlet = '';
+    var html_footer = '';
+
+    var area = '';
+    var address = '';
+    var img = 'assets/attachment/daydayup5.jpg';
+
+    html += '<div class="footer-top">';
+    html += '<div class="container">';
+    html += '<div class="row">';
+    html += '<div class="col-lg-6 text-center text-middle">';
+    html += '<div class="col-lg-12 footer-contact"><a href="javascript:void(0)" class="app_name_0" style="font-size:1.75rem;" onclick="resetMap()" >'+app_name+' <i class="bi bi-pin-map-fill"></i></a></div>';
+    html += '<div class="col-lg-12 footer-contact">';
+    html_logo += '<img src="'+img+'" class="img-fluid app_img_0" onclick="resetMap()">';
+    html += '</div>';
+    html += html_logo;
+    html += '</div>';//close col-lg-6
+    html += '<div class="col-lg-6 text-center">';
+
+    outlet_arr.forEach((outlet, key) => {
+
+        area = '<a href="javascript:void(0)" onclick="pointToLocation(' + outlet[3] + ', ' + outlet[4] + ')">'+outlet[0].toUpperCase()+' <i class="bi bi-pin-map"></i></a><br/>';
+        address = outlet[1];
+        img = outlet[2];
+
+        // html += '<div class="footer-top"><div class="container"><div class="row"><div class="col-lg-4 footer-contact"><h3 class="app_name_'+key+'">'+app_name+area+'</h3></div><div class="col-lg-4 footer-contact"><p class="app_address_'+key+'">'+address+'</p></div><div class="col-lg-4 footer-contact"><img src="'+img+'" class="img-fluid app_img_'+key+'"></div></div></div></div>';
+
+
+        html_outlet += '<div class="col-lg-12 footer-contact">'+area+'<p class="app_address_'+key+'">'+address+'</p></div>';
+
+    });
+
+    html += html_outlet;
+    html += '</div>';//close col-lg-6
+    html += '</div>';//close row
+    html += '</div>';//close container
+    html += '</div>';//close footer-top
+
+    html_footer += '<div class="footer-top"><div class="container"><div class="copyright-msg">'+copyright+'</div></div></div>';
+    html += html_footer;
+    
+    if(type == 'footer'){
+        $('#footer').html(html);
+    }else{
+
+        var logo_text = '<div><a href="javascript:void(0)" class="app_name_0" style="font-size:1.75rem;" onclick="resetMap()" >中心一览 All Outlet <i class="bi bi-pin-map-fill"></i></a></div>';
+        html_logo = logo_text + html_logo
+        $('#daydayup_logo').html(html_logo);
+        $('.app_address').html(html_outlet);
+        $('#footer').html(html_footer);
+    }
+
 }
