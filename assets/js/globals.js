@@ -19,7 +19,7 @@ function set_page(app_url) {
     var outlet_arr = [
         ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846','assets/attachment/daydayup5.jpg', 1.418493624867837, 103.83487635665111],
         ['Bukit Timah Shopping Centre', '170 Upper Bukit Timah Rd #B2-18 <br/>Singapore 588179', 'assets/attachment/daydayup5.jpg', 1.3431329504325333, 103.77607953714467],
-        ['New West', '1 W Coast Dr <br/>Singapore 128020', 'assets/attachment/daydayup5.jpg', 1.3165519381288215, 103.75739630914103]
+        ['NeWest Mall<br/>Formerly Hong Leing Garden', '1 West Coast Drive <br/>Singapore 128020', 'assets/attachment/daydayup5.jpg', 1.3165519381288215, 103.75739630914103]
     ];    
     
     var timestamp = new Date().getTime();
@@ -30,38 +30,91 @@ function set_page(app_url) {
     document.write('<script src="' + jsUrl2 + '"></script>');
     document.write('<script src="' + jsUrl3 + '"></script>');
 
+    get_nav_bar();
 
     let page = 'Home';
-
+    
     if (app_url.includes('about.html')) {
+
         page = 'About';
+        show_active('app_about');
+
     }else if (app_url.includes('timetable.html')) {
+
         page = 'Calendar';
+        show_active('app_timetable');
+
     } else if (app_url.includes('classes.html')) {
+
         page = 'Classes';
+        show_active('app_programmes');
+        show_active('app_class');
         load_max_ppl_msg();
+
     } else if (app_url.includes('class-details.html')) {
+
         page = 'Class Details';
+        show_active('app_programmes');
+        show_active('app_class');
+
     } else if (app_url.includes('classes-holiday.html')) {
+
         page = 'Holiday Classes';
+        show_active('app_programmes');
+        show_active('app_class_holiday');
+
     } else if (app_url.includes('class-holiday-details.html')) {
+
         page = 'Holiday Class Details';
+        show_active('app_programmes');
+        show_active('app_class_holiday');
+
     } else if (app_url.includes('teachers.html')) {
+
         page = 'Teachers';
+        show_active('app_teacher');
+
     } else if (app_url.includes('parent-word.html')) {
+
         page = 'Parents & Students Words';
+        show_active('app_reviews');
+        show_active('app_parent_word');
         load_parent_words(1, 17); //xsjz | xsjzv
+
     } else if (app_url.includes('student-works.html')) {
+
         page = 'Student Works';
+        show_active('app_reviews');
+        show_active('app_student_work');
         load_student_work(12, 4);//xx | xxv
+
     } else if (app_url.includes('contact.html')) {
+
         page = 'Contact';
+        show_active('app_contact');
+
     } else if (app_url.includes('achievements.html')) {
+
         page = 'Achievements';
+        show_active('app_reviews');
+        show_active('app_achievements');
         load_achievements(14); //cj
+
     } else if (app_url.includes('gathering.html')) {
+
         page = 'Gathering';
+        show_active('app_reviews');
+        show_active('app_gathering');
         load_gathering(1, 15, 12, 33);//jhsp | jh | jhs | jhv
+
+    } else if (app_url.includes('meeting.html')) {
+
+        page = 'Meetings';
+        show_active('app_meeting');
+        load_meeting();
+
+    }else{
+        show_active('app_home');
     }
 
     let app_name = "天天向上语文学校<br/>DayDayUp Language School";
@@ -161,18 +214,7 @@ function load_gathering(max_jhsp_video = 10, max_jh_photo = 10, max_jhs_photo = 
         $('.gatherings').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/gathering/jhv/jhv'+i+'.jpg" alt="..." width="640" height="1370" loading="lazy"></div></div></div>');
     }
 
-    // Attach event listeners after elements have been added
-    $('video').each(function() {
-        this.onplay = () => updateButtonIcon(this.id, 'pause');
-        this.onpause = () => updateButtonIcon(this.id, 'play');
-        this.onended = () => updateButtonIcon(this.id, 'play');
-        this.ontimeupdate = () => updateProgress(this.id);
-    });
-
-    // Prevent right-click on all video elements
-    $('video').on('contextmenu', function(e) {
-        e.preventDefault();
-    });
+    set_video_control();
 }
 
 function load_max_ppl_msg(){
@@ -226,6 +268,21 @@ function setVideoProgress(e, videoId) {
     const progressBar = e.currentTarget;
     const clickPosition = (e.pageX - progressBar.offsetLeft) / progressBar.offsetWidth;
     video.currentTime = clickPosition * video.duration;
+}
+
+function set_video_control() {
+    // Attach event listeners after elements have been added
+    $('video').each(function() {
+        this.onplay = () => updateButtonIcon(this.id, 'pause');
+        this.onpause = () => updateButtonIcon(this.id, 'play');
+        this.onended = () => updateButtonIcon(this.id, 'play');
+        this.ontimeupdate = () => updateProgress(this.id);
+    });
+
+    // Prevent right-click on all video elements
+    $('video').on('contextmenu', function(e) {
+        e.preventDefault();
+    });
 }
 
 
@@ -330,4 +387,59 @@ function get_outlets(app_name, outlet_arr, copyright, type = 'footer'){
         $('#footer').html(html_footer);
     }
 
+}
+
+
+function get_nav_bar(){
+
+    var html = '';
+    html += '<li><a href="index.html" class="app_home">Home</a></li>';
+
+    html += '<li><a href="about.html" class="app_about">About</a></li>';
+
+    html += '<li><a href="timetable.html" class="app_timetable">Calendar</a></li>';
+
+    html += '<li class="dropdown">';
+    html += '<a href="#"><span class="app_programmes">Programmes</span> <i class="bi bi-chevron-down"></i></a>';
+    html += '<ul><li><a href="classes.html" class="app_class">Classes</a></li></ul>';
+    html += '</li>';
+
+    html += '<li><a class="app_teacher" href="teachers.html">Teachers</a></li>';
+
+    html += '<li class="dropdown"><a href="#"><span class="app_reviews">Reviews</span><i class="bi bi-chevron-down app_reviews_chevron"></i></a>';
+    html += '<ul>';
+    html += '<li class="app_student_work_control"><a class="app_student_work" href="student-works.html">Student Works</a></li>';
+    html += '<li class="app_achievements_control"><a class="app_achievements" href="achievements.html">Achievements</a></li>';
+    html += '<li class="app_parent_word_control" ><a class="app_parent_word" href="parent-word.html" >Parents & Students Words</a></li>';
+    html += '<li class="app_gathering_control"><a class="app_gathering" href="gathering.html" >Gathering</a></li>';
+    html += '</ul></li>';
+
+    // html += '<li><a href="meeting.html" class="app_meeting">Meetings</a></li>';
+
+    html += '<li><a href="contact.html" class="app_contact">Contact</a></li>';
+          
+    $('#navbar_ul').html(html);
+}
+
+
+function show_active(app_class = 'app_home'){
+    $('.'+app_class).addClass('active');
+}
+
+
+
+function load_meeting() {
+
+    $('.meeting').append('<div style="margin-bottom:50px;"><h1 class="text-center">2024年第三学段启动会</h1></div>');
+
+    var i = 1;
+    $('.meeting').append('<div class="col-md-12 d-flex align-items-stretch video-container"><div class="card"><div class="card-img"><h2 class="text-center">致辞</h2><video loading="lazy" id="mt_video_'+i+'" onplay="updateButtonIcon(\'mt_video_'+i+'\', \'pause\')" onpause="updateButtonIcon(\'mt_video_'+i+'\', \'play\')" onended="updateButtonIcon(\'mt_video_'+i+'\', \'play\')"><source src="assets/img/meeting/opening.mp4" type="video/mp4" preload="metadata"></video><div class="controls"><button class="btn btn-success bi bi-play-fill" id="btn_mt_video_'+i+'" onclick="togglePlay(\'mt_video_'+i+'\')"></button><div class="progress-bar" onclick="setVideoProgress(event, \'progress_mt_video_'+i+'\')"><div class="progress" id="progress_mt_video_'+i+'"></div></div></div></div></div>');
+
+    i++;
+    $('.meeting').append('<div class="col-md-12 d-flex align-items-stretch video-container"><div class="card"><div class="card-img"><h2 class="text-center">自我介绍</h2><video loading="lazy" id="mt_video_'+i+'" onplay="updateButtonIcon(\'mt_video_'+i+'\', \'pause\')" onpause="updateButtonIcon(\'mt_video_'+i+'\', \'play\')" onended="updateButtonIcon(\'mt_video_'+i+'\', \'play\')"><source src="assets/img/meeting/self_intro.mp4" type="video/mp4" preload="metadata"></video><div class="controls"><button class="btn btn-success bi bi-play-fill" id="btn_mt_video_'+i+'" onclick="togglePlay(\'mt_video_'+i+'\')"></button><div class="progress-bar" onclick="setVideoProgress(event, \'progress_mt_video_'+i+'\')"><div class="progress" id="progress_mt_video_'+i+'"></div></div></div></div></div>');
+
+    i++;
+    $('.meeting').append('<div class="col-md-12 d-flex align-items-stretch video-container"><div class="card"><div class="card-img"><h2 class="text-center">代表发言与发展目标</h2><video loading="lazy" id="mt_video_'+i+'" onplay="updateButtonIcon(\'mt_video_'+i+'\', \'pause\')" onpause="updateButtonIcon(\'mt_video_'+i+'\', \'play\')" onended="updateButtonIcon(\'mt_video_'+i+'\', \'play\')"><source src="assets/img/meeting/development.mp4" type="video/mp4" preload="metadata"></video><div class="controls"><button class="btn btn-success bi bi-play-fill" id="btn_mt_video_'+i+'" onclick="togglePlay(\'mt_video_'+i+'\')"></button><div class="progress-bar" onclick="setVideoProgress(event, \'progress_mt_video_'+i+'\')"><div class="progress" id="progress_mt_video_'+i+'"></div></div></div></div></div>');
+
+    set_video_control();
 }

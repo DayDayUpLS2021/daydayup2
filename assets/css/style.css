@@ -1702,6 +1702,7 @@ section {
 }
 .video-container .card {
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: center;
 }
@@ -1755,7 +1756,7 @@ section {
   background: #666699;
   width: 0%;
 }
-
+/* End Video class */
 
 
 
