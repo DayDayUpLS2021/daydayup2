@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Meetings - DayDayUp Language School</title>
+  <title>Announcements - DayDayUp Language School</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -29,7 +29,6 @@
   <link href="assets/css/style.css" rel="stylesheet">
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 
   <!-- =======================================================
   * Template Name: Mentor
@@ -58,11 +57,10 @@
           <li class="dropdown"><a href="#"><span class="app_programmes">Programmes</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="classes.html" class="app_class">Classes</a></li>
-              <!-- <li><a href="classes-holiday.html" class="app_class_holiday">Holiday Classes</a></li> -->
             </ul>
           </li>
-          <li><a href="teachers.html" class="teachers">Teachers</a></li>
-          <li class="dropdown"><a class="app_reviews_active"  href="#"><span class="app_reviews">Reviews</span> <i class="bi bi-chevron-down app_reviews_chevron"></i></a>
+          <li><a href="teachers.html" class="app_teacher">Teachers</a></li>
+          <li class="dropdown"><a href="#"><span class="app_reviews">Reviews</span> <i class="bi bi-chevron-down app_reviews_chevron"></i></a>
             <ul>
               <li class="app_student_work_control"><a class="app_student_work" href="student-works.html">Student Works</a></li>
               <li class="app_achievements_control"><a class="app_achievements" href="achievements.html">Achievements</a></li>
@@ -70,10 +68,7 @@
               <li class="app_gathering_control"><a class="app_gathering" href="gathering.html" >Gathering</a></li>
             </ul>
           </li>
-          
-          <li><a href="meeting.html" class="active app_meeting">Meetings</a></li>
-
-          <li><a href="contact.html" class="app_contact">Contact</a></li>
+          <li><a class="active app_contact" href="contact.html">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -88,20 +83,19 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
-        <h2>会议<br/>Meetings</h2>
+        <h2>Announcements</h2>
       </div>
     </div><!-- End Breadcrumbs -->
 
-    <!-- ======= Events Section ======= -->
+    <!-- ======= Event Section ======= -->
     <section id="events" class="events">
       <div class="container" data-aos="fade-up">
 
-        <div class="row meeting">
-          
+        <div id="announce" style="min-height: 50vh;">
         </div>
 
       </div>
-    </section><!-- End Events Section -->
+    </section><!-- End Event Section -->
 
   </main><!-- End #main -->
 
@@ -111,7 +105,6 @@
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
           <div class="col-lg-6 footer-contact text-center">
             <h3 class="app_name">DayDayUp Language School</h3>
           </div>
@@ -124,14 +117,16 @@
               <strong>Email:</strong> daydayupls21@gmail.com<br>
             </p>
           </div>
-
         </div>
-
-        <div class="copyright-msg"></div>
       </div>
     </div>
 
   </footer><!-- End Footer -->
+
+
+  <div class="floating-whatsapp" onclick="window.open('https://api.whatsapp.com/send?phone=6581515668', '_blank')">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </div>
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -146,10 +141,12 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   
-  <!-- Video control -->
-  <script src="assets/js/video.js"></script>
+
+  <!-- Announcement -->
+  <script src="assets/js/announcement.js"></script>
   <!-- Set title of page -->
   <script src="assets/js/globals.js"></script>
+  
 
 </body>
 

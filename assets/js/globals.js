@@ -22,13 +22,7 @@ function set_page(app_url) {
         ['NeWest Mall<br/>Formerly Hong Leing Garden', '1 West Coast Drive <br/>Singapore 128020', 'assets/attachment/daydayup5.jpg', 1.3165519381288215, 103.75739630914103]
     ];    
     
-    var timestamp = new Date().getTime();
-    var cssUrl = "assets/css/style.css?v=" + timestamp;
-    var jsUrl2 = "assets/js/class_detl.js?v=" + timestamp;
-    var jsUrl3 = "assets/js/holiday_class_detl.js?v=" + timestamp;
-    document.write('<link rel="stylesheet" href="' + cssUrl + '">');
-    document.write('<script src="' + jsUrl2 + '"></script>');
-    document.write('<script src="' + jsUrl3 + '"></script>');
+    loadScripts(app_url);
 
     get_nav_bar();
 
@@ -113,6 +107,12 @@ function set_page(app_url) {
         show_active('app_meeting');
         load_meeting();
 
+    } else if (app_url.includes('announcements.html')) {
+
+        page = 'Announcements';
+        show_active('app_announcements');
+        load_announcements();
+
     }else{
         show_active('app_home');
     }
@@ -162,61 +162,6 @@ function set_page(app_url) {
 }
 
 
-function load_student_work(max_photo_xx = 10, max_photo_xxv = 10) {
-
-    for(i=max_photo_xx; i >= 1; i--){
-        $('.student-works').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/xx'+i+'.jpg" alt="..." width="640" height="360" loading="lazy"></div></div></div>');
-    }
-
-    for(i=max_photo_xxv; i >= 1; i--){
-        $('.student-works').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/studies/xxv'+i+'.jpg" alt="..." width="640" height="1100" loading="lazy"></div></div></div>');
-    }
-}
-
-
-function load_achievements(max_photo = 10) {
-
-    for(i=max_photo; i >= 1; i--){
-        $('.achievements').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/achievements/cj'+i+'.jpg" alt="..." width="640" height="850" loading="lazy"></div></div></div>');
-    }
-}
-
-
-//students & parents
-function load_parent_words(max_photo_xsjz = 10, max_photo_xsjzv = 10) {
-
-    for(i=max_photo_xsjzv; i >= 1; i--){
-        $('.parent-words').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/parents/xsjzv'+i+'.jpg" alt="..." width="640" height="1370" loading="lazy"></div></div></div>');
-    }
-
-
-    for(i=max_photo_xsjz; i >= 1; i--){
-        $('.parent-words').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/parents/xsjz'+i+'.jpg" alt="..." width="640" height="360" loading="lazy"></div></div></div>');
-    }
-}
-
-
-function load_gathering(max_jhsp_video = 10, max_jh_photo = 10, max_jhs_photo = 10, max_jhv_photo = 10) {
-
-    for(i=max_jhsp_video; i >= 1; i--){
-        $('.gatherings').append('<div class="col-md-12 d-flex align-items-stretch video-container"><div class="card"><div class="card-img"><video loading="lazy" id="jh_video' + i + '" onplay="updateButtonIcon(\'jh_video'+i+'\', \'pause\')" onpause="updateButtonIcon(\'jh_video'+i+'\', \'play\')" onended="updateButtonIcon(\'jh_video'+i+'\', \'play\')"><source src="assets/img/gathering/jhsp/jhsp' + i + '.mp4" type="video/mp4" preload="metadata"></video><div class="controls"><button class="btn btn-success bi bi-play-fill" id="btn_jh_video'+i+'" onclick="togglePlay(\'jh_video' + i + '\')"></button><div class="progress-bar" onclick="setVideoProgress(event, \'progress_jh_video'+i+'\')"><div class="progress" id="progress_jh_video'+i+'"></div></div></div></div></div>');
-    }
-
-    for(i=max_jh_photo; i >= 1; i--){
-        $('.gatherings').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/gathering/jh/jh'+i+'.jpg" alt="..." width="640" height="360" loading="lazy"></div></div></div>');
-    }
-
-    for(i=max_jhs_photo; i >= 1; i--){
-        $('.gatherings').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/gathering/jhs/jhs'+i+'.jpg" alt="..." width="640" height="850" loading="lazy"></div></div></div>');
-    }
-
-    for(i=max_jhv_photo; i >= 1; i--){
-        $('.gatherings').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/gathering/jhv/jhv'+i+'.jpg" alt="..." width="640" height="1370" loading="lazy"></div></div></div>');
-    }
-
-    set_video_control();
-}
-
 function load_max_ppl_msg(){
     
     $('.max-ppl-msg').html('Max 9 Students/timeslot<br/>最大班额9人');
@@ -235,67 +180,6 @@ function updateAppName(page, app_name, app_name2) {
     document.title = page + ' - ' + app_name2;  // Update the page title if needed
 }
 
-
-function togglePlay(videoId) {
-    const video = document.getElementById(videoId);
-    if (video.paused || video.ended) {
-        video.play();
-    } else {
-        video.pause();
-    }
-}
-
-
-function updateButtonIcon(videoId, state) {
-    const buttonIcon = document.querySelector('#btn_'+videoId);
-    if (state === 'play') {
-        buttonIcon.className = 'btn btn-success bi bi-play-fill';
-    } else {
-        buttonIcon.className = 'btn btn-success bi bi-pause-fill';
-    }
-}
-
-
-function updateProgress(videoId) {
-    const video = document.getElementById(videoId);
-    const progress = document.getElementById('progress_' + videoId);
-    const value = (video.currentTime / video.duration) * 100;
-    progress.style.width = `${value}%`;
-}
-
-function setVideoProgress(e, videoId) {
-    const video = document.getElementById(videoId);
-    const progressBar = e.currentTarget;
-    const clickPosition = (e.pageX - progressBar.offsetLeft) / progressBar.offsetWidth;
-    video.currentTime = clickPosition * video.duration;
-}
-
-function set_video_control() {
-    // Attach event listeners after elements have been added
-    $('video').each(function() {
-        this.onplay = () => updateButtonIcon(this.id, 'pause');
-        this.onpause = () => updateButtonIcon(this.id, 'play');
-        this.onended = () => updateButtonIcon(this.id, 'play');
-        this.ontimeupdate = () => updateProgress(this.id);
-    });
-
-    // Prevent right-click on all video elements
-    $('video').on('contextmenu', function(e) {
-        e.preventDefault();
-    });
-}
-
-
-function pointToLocation(lat, lng) {
-    var iframe = document.getElementById('custom_map');
-    iframe.src = `https://www.google.com/maps/d/u/0/embed?mid=1Feh5ETZFq3C4TCF-OrgH1DXUp1rSjbA&ehbc=2E312F&noprof=1&ll=${lat},${lng}&z=15`;
-}
-
-
-function resetMap() {
-    var iframe = document.getElementById('custom_map');
-    iframe.src = 'https://www.google.com/maps/d/u/0/embed?mid=1Feh5ETZFq3C4TCF-OrgH1DXUp1rSjbA&ehbc=2E312F&noprof=1';
-}
 
 function get_teachers() {
 
@@ -399,6 +283,8 @@ function get_nav_bar(){
 
     html += '<li><a href="timetable.html" class="app_timetable">Calendar</a></li>';
 
+    html += '<li><a href="announcements.html" class="app_announcements">Announcements</a></li>';
+
     html += '<li class="dropdown">';
     html += '<a href="#"><span class="app_programmes">Programmes</span> <i class="bi bi-chevron-down"></i></a>';
     html += '<ul><li><a href="classes.html" class="app_class">Classes</a></li></ul>';
@@ -427,19 +313,70 @@ function show_active(app_class = 'app_home'){
 }
 
 
+function stripQueryParams(url) {
+    return url.split('?')[0];
+}
 
-function load_meeting() {
+function removeScripts(jsUrl) {
+    return new Promise((resolve) => {
+        jsUrl.forEach(function(partialUrl) {
+            var cleanPartialUrl = stripQueryParams(partialUrl);
+            var oldScripts = document.querySelectorAll('script');
+            oldScripts.forEach(function(script) {
+                var scriptSrc = stripQueryParams(script.src);
+                if (scriptSrc.includes(cleanPartialUrl)) {
+                    script.parentNode.removeChild(script);
+                }
+            });
+        });
+        resolve();
+    });
+}
 
-    $('.meeting').append('<div style="margin-bottom:50px;"><h1 class="text-center">2024年第三学段启动会</h1></div>');
 
-    var i = 1;
-    $('.meeting').append('<div class="col-md-12 d-flex align-items-stretch video-container"><div class="card"><div class="card-img"><h2 class="text-center">致辞</h2><video loading="lazy" id="mt_video_'+i+'" onplay="updateButtonIcon(\'mt_video_'+i+'\', \'pause\')" onpause="updateButtonIcon(\'mt_video_'+i+'\', \'play\')" onended="updateButtonIcon(\'mt_video_'+i+'\', \'play\')"><source src="assets/img/meeting/opening.mp4" type="video/mp4" preload="metadata"></video><div class="controls"><button class="btn btn-success bi bi-play-fill" id="btn_mt_video_'+i+'" onclick="togglePlay(\'mt_video_'+i+'\')"></button><div class="progress-bar" onclick="setVideoProgress(event, \'progress_mt_video_'+i+'\')"><div class="progress" id="progress_mt_video_'+i+'"></div></div></div></div></div>');
+function addScripts(jsUrl) {
+    return new Promise((resolve) => {
+        jsUrl.forEach(function(url) {
+            var script = document.createElement('script');
+            script.src = url;
+            script.setAttribute('data-dynamic', 'true');
+            document.head.appendChild(script);
+        });
+        resolve();
+    });
+}
 
-    i++;
-    $('.meeting').append('<div class="col-md-12 d-flex align-items-stretch video-container"><div class="card"><div class="card-img"><h2 class="text-center">自我介绍</h2><video loading="lazy" id="mt_video_'+i+'" onplay="updateButtonIcon(\'mt_video_'+i+'\', \'pause\')" onpause="updateButtonIcon(\'mt_video_'+i+'\', \'play\')" onended="updateButtonIcon(\'mt_video_'+i+'\', \'play\')"><source src="assets/img/meeting/self_intro.mp4" type="video/mp4" preload="metadata"></video><div class="controls"><button class="btn btn-success bi bi-play-fill" id="btn_mt_video_'+i+'" onclick="togglePlay(\'mt_video_'+i+'\')"></button><div class="progress-bar" onclick="setVideoProgress(event, \'progress_mt_video_'+i+'\')"><div class="progress" id="progress_mt_video_'+i+'"></div></div></div></div></div>');
 
-    i++;
-    $('.meeting').append('<div class="col-md-12 d-flex align-items-stretch video-container"><div class="card"><div class="card-img"><h2 class="text-center">代表发言与发展目标</h2><video loading="lazy" id="mt_video_'+i+'" onplay="updateButtonIcon(\'mt_video_'+i+'\', \'pause\')" onpause="updateButtonIcon(\'mt_video_'+i+'\', \'play\')" onended="updateButtonIcon(\'mt_video_'+i+'\', \'play\')"><source src="assets/img/meeting/development.mp4" type="video/mp4" preload="metadata"></video><div class="controls"><button class="btn btn-success bi bi-play-fill" id="btn_mt_video_'+i+'" onclick="togglePlay(\'mt_video_'+i+'\')"></button><div class="progress-bar" onclick="setVideoProgress(event, \'progress_mt_video_'+i+'\')"><div class="progress" id="progress_mt_video_'+i+'"></div></div></div></div></div>');
+function loadScripts(app_url) {
 
-    set_video_control();
+    var timestamp = new Date().getTime();
+    var cssUrl = "assets/css/style.css?v=" + timestamp;
+
+    document.write('<link rel="stylesheet" href="' + cssUrl + '">');
+
+    var jsUrl = [];
+
+    jsUrl.push("assets/js/announcement.js?v=" + timestamp);
+    if(app_url.includes('class-details.html')){
+        jsUrl.push("assets/js/class_detl.js?v=" + timestamp);
+    }else if(app_url.includes('class-holiday-details.html')){
+        jsUrl.push("assets/js/holiday_class_detl.js?v=" + timestamp);
+    }else if(app_url.includes('class-holiday-details.html')){
+        jsUrl.push("assets/js/holiday_class_detl.js?v=" + timestamp);
+    }else if(app_url.includes('achievements.html') || app_url.includes('gathering.html') || app_url.includes('parent-word.html') || app_url.includes('student-works.html')){
+        jsUrl.push("assets/js/gallery.js?v=" + timestamp);
+    }else if(app_url.includes('contact.html')){
+        jsUrl.push("assets/js/map.js?v=" + timestamp);
+    }else if(app_url.includes('gathering.html') || app_url.includes('meeting.html')){
+        jsUrl.push("assets/js/video.js?v=" + timestamp);
+    }
+
+
+    removeScripts(jsUrl)
+        .then(() => {
+            return addScripts(jsUrl);
+        })
+        .catch((error) => {
+            console.error('Error in script management:', error);
+        });
 }
