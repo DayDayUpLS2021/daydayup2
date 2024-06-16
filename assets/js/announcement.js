@@ -2,7 +2,7 @@
 
     window.announcements = [["11-06-2024", "Exciting news! Check out our latest updates!"],["13-06-2024", "New classes starting soon. Enroll today!"],["15-06-2024", "Don't miss our summer camp registration!"]];
 
-    // $('#announcement').hide();
+    $('#announcement').hide();
 
     document.addEventListener("DOMContentLoaded", function() {
         let currentAnnouncement = 0;

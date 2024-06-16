@@ -19,7 +19,7 @@ function set_page(app_url) {
     var outlet_arr = [
         ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846','assets/attachment/daydayup5.jpg', 1.418493624867837, 103.83487635665111],
         ['Bukit Timah Shopping Centre', '170 Upper Bukit Timah Rd #B2-18 <br/>Singapore 588179', 'assets/attachment/daydayup5.jpg', 1.3431329504325333, 103.77607953714467],
-        ['NeWest Mall<br/>Formerly Hong Leing Garden', '1 West Coast Drive <br/>Singapore 128020', 'assets/attachment/daydayup5.jpg', 1.3165519381288215, 103.75739630914103]
+        ['NeWest Mall<br/>Formerly Hong Leing Garden', '1 West Coast Drive #01-02 <br/>Singapore 128020', 'assets/attachment/daydayup5.jpg', 1.3165519381288215, 103.75739630914103]
     ];    
     
     loadScripts(app_url);
@@ -283,7 +283,7 @@ function get_nav_bar(){
 
     html += '<li><a href="timetable.html" class="app_timetable">Calendar</a></li>';
 
-    html += '<li><a href="announcements.html" class="app_announcements">Announcements</a></li>';
+    // html += '<li><a href="announcements.html" class="app_announcements">Announcements</a></li>';
 
     html += '<li class="dropdown">';
     html += '<a href="#"><span class="app_programmes">Programmes</span> <i class="bi bi-chevron-down"></i></a>';
