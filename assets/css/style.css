@@ -911,6 +911,13 @@ section {
   padding: 0 20px 30px 20px;
 }
 
+.trainers .member .member-content .role {
+  display: block;
+  margin-top: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
 .trainers .member h4 {
   font-weight: 700;
   margin-bottom: 2px;
@@ -947,6 +954,7 @@ section {
   font-size: 18px;
   margin: 0 2px;
 }
+
 
 /*--------------------------------------------------------------
 # Testimonials
