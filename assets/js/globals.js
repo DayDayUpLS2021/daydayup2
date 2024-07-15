@@ -20,23 +20,27 @@ function set_page(app_url) {
         ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846','assets/attachment/daydayup5.jpg', 1.418493624867837, 103.83487635665111],
         ['Bukit Timah Shopping Centre', '170 Upper Bukit Timah Rd #B2-18 <br/>Singapore 588179', 'assets/attachment/daydayup5.jpg', 1.34311, 103.77607],
         ['NeWest Mall<br/>Formerly Hong Leing Garden', '1 West Coast Drive #01-02 <br/>Singapore 128020', 'assets/attachment/daydayup5.jpg', 1.31648, 103.75739]
-    ];    
+    ];
     
     loadScripts(app_url);
 
     get_nav_bar();
 
     let page = 'Home';
-    
+    var footer_outl = false;
     if (app_url.includes('about.html')) {
 
         page = 'About';
         show_active('app_about');
 
+        footer_outl = true;
+
     }else if (app_url.includes('timetable.html')) {
 
         page = 'Calendar';
         show_active('app_timetable');
+
+        footer_outl = true;
 
     } else if (app_url.includes('classes.html')) {
 
@@ -75,12 +79,16 @@ function set_page(app_url) {
         show_active('app_parent_word');
         load_parent_words(1, 17); //xsjz | xsjzv
 
+        footer_outl = true;
+
     } else if (app_url.includes('student-works.html')) {
 
         page = 'Student Works';
         show_active('app_reviews');
         show_active('app_student_work');
         load_student_work(12, 4);//xx | xxv
+
+        footer_outl = true;
 
     } else if (app_url.includes('contact.html')) {
 
@@ -95,12 +103,16 @@ function set_page(app_url) {
         show_active('app_achievements');
         load_achievements(14); //cj
 
+        footer_outl = true;
+
     } else if (app_url.includes('gathering.html')) {
 
         page = 'Gathering';
         show_active('app_reviews');
         show_active('app_gathering');
         load_gathering(1, 15, 12, 33);//jhsp | jh | jhs | jhv
+
+        footer_outl = true;
 
     } else if (app_url.includes('meeting.html')) {
 
@@ -141,19 +153,25 @@ function set_page(app_url) {
     $('.get-started-btn').text('Get Started');
 
 
-    var contact = '<br/>郑娟老师👩‍🏫 华文热线咨询<br/><strong>Phone:</strong> 91669059 （每日）9am-9pm<br/><br/><strong>Tel:</strong> 6530 3063<br/><strong>WhatsApp:</strong> <a  onclick="window.open(\'https://api.whatsapp.com/send?phone=6581515668\', \'_blank\')">+65 8151 5668</a><br/><strong>Email:</strong> daydayupls21@gmail.com';
+    var contact = '郑娟老师👩‍🏫 华文热线咨询<br/><strong>Phone:</strong> 91669059 （每日）9am-9pm<br/><br/><strong>Tel:</strong> 6530 3063<br/><strong>WhatsApp:</strong> <a  onclick="window.open(\'https://api.whatsapp.com/send?phone=6581515668\', \'_blank\')">+65 8151 5668</a><br/><strong>Email:</strong> daydayupls21@gmail.com';
 
     var copyright = 'All images on this website are copyrighted by their respective owners. We respect the copyrights of others and do not knowingly infringe on them. If you believe that any of the images on this website infringes on your copyright, please contact us and we will remove it immediately.';
 
 
-    $('.contact_list').html(contact);
+    $('.contact_list').html('<br/>'+contact);
 
     if(app_url.includes('contact.html')){
 
         get_outlets(app_name, outlet_arr, copyright, 'map');
 
     }else{
-        $('.app_address').html(outlet_arr[0][1]+'<br/>'+contact);
+
+        if(footer_outl){
+            footer_outlet(outlet_arr, contact);
+        }else{
+            $('.app_address').html('<i class="bi bi-pin-map"></i>'+outlet_arr[0][1]+'<br/><br/>'+contact);
+        }
+        
     }
     
 
@@ -299,6 +317,19 @@ function get_outlets(app_name, outlet_arr, copyright, type = 'footer'){
     }
 
 }
+
+
+function footer_outlet(outlet_arr, contact) {
+
+    footer_outl_html = '';
+    
+    outlet_arr.forEach((outlet, key) => {
+        footer_outl_html += '<div class="col-lg-6 footer-contact text-center"><i class="bi bi-pin-map"></i>'+outlet[1]+'</div>';
+    });
+    
+    $('.app_address').html(contact);
+    $('.footer_address').html(footer_outl_html);
+}   
 
 
 function get_nav_bar(){
