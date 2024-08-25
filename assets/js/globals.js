@@ -1,3 +1,9 @@
+var outlet_arr = [
+    ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846','assets/attachment/daydayup5.jpg', 1.418493624867837, 103.83487635665111],
+    ['Bukit Timah Shopping Centre', '170 Upper Bukit Timah Road #B2-18 <br/>Singapore 588179', 'assets/attachment/daydayup5.jpg', 1.34311, 103.77607],
+    ['NeWest Mall<br/>Formerly Hong Leong Garden', '1 West Coast Drive #01-02 <br/>Singapore 128020', 'assets/attachment/daydayup5.jpg', 1.31648, 103.75739]
+];
+
 
 (function() {
 
@@ -14,13 +20,7 @@
 
 
 
-function set_page(app_url) {
-
-    var outlet_arr = [
-        ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846','assets/attachment/daydayup5.jpg', 1.418493624867837, 103.83487635665111],
-        ['Bukit Timah Shopping Centre', '170 Upper Bukit Timah Road #B2-18 <br/>Singapore 588179', 'assets/attachment/daydayup5.jpg', 1.34311, 103.77607],
-        ['NeWest Mall<br/>Formerly Hong Leong Garden', '1 West Coast Drive #01-02 <br/>Singapore 128020', 'assets/attachment/daydayup5.jpg', 1.31648, 103.75739]
-    ];
+function set_page(app_url) {    
     
     loadScripts(app_url);
 
@@ -443,3 +443,4 @@ function loadScripts(app_url) {
             console.error('Error in script management:', error);
         });
 }
+
