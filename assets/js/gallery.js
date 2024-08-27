@@ -19,7 +19,7 @@ function load_student_work(max_photo_xx = 10, max_photo_xxv = 10) {
 
 function load_special_achievements(){
     var sAchievement = '<div class="text-center"><h3><i class="bi bi-journal-text"></i> 文章发表</h3></div>';
-    sAchievement += '<div class="col-md-6 d-flex "><h4 style="width:100%;" class="text-center"><a href="https://www.zaobao.com.sg/forum/talk/story20240821-4514855" target="_blank"><i class="bi bi-hand-index-thumb"></i> S3H温凯畯（华中）《联合早报》</a><a href="https://www.zaobao.com.sg/forum/talk/story20240821-4514855" style="font-size:8pt;" target="_blank">点击查看</a></h4></div>';
+    sAchievement += '<div class="col-md-6 d-flex "><h4 style="width:100%;" class="text-center"><a href="https://www.zaobao.com.sg/forum/talk/story20240821-4514855" target="_blank"><i class="bi bi-hand-index-thumb"></i> S3H温凯畯（华中）《联合早报》<span style="font-size:8pt;">点击查看</span></a></h4></div>';
 
     $('.special_achievements').html(sAchievement);
 }
