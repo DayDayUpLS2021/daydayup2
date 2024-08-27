@@ -101,7 +101,8 @@ function set_page(app_url) {
         page = 'Achievements';
         show_active('app_reviews');
         show_active('app_achievements');
-        load_achievements(14); //cj
+        load_special_achievements();
+        load_achievements(16); //cj
 
         footer_outl = true;
 
