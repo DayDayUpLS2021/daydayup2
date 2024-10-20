@@ -17,11 +17,20 @@ function load_student_work(max_photo_xx = 10, max_photo_xxv = 10) {
     }
 }
 
-function load_special_achievements(){
+function load_special_achievements(max_hscj = 10, max_vscj = 10){
     var sAchievement = '<div class="text-center"><h3><i class="bi bi-journal-text"></i> 文章发表</h3></div>';
     sAchievement += '<div class="col-md-6 d-flex "><h4 style="width:100%;" class="text-center"><a href="https://www.zaobao.com.sg/forum/talk/story20240821-4514855" target="_blank"><i class="bi bi-hand-index-thumb"></i> S3H温凯畯（华中）《联合早报》<span style="font-size:8pt;">点击查看</span></a></h4></div>';
 
     $('.special_achievements').html(sAchievement);
+
+    for(i=max_hscj; i >= 1; i--){
+        $('.special_achievement_img').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/achievements/hscj'+i+'.jpg" alt="..." width="640" height="1370" loading="lazy"></div></div></div>');
+    }
+
+
+    for(i=max_vscj; i >= 1; i--){
+        $('.special_achievement_img').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/achievements/vscj'+i+'.jpg" alt="..." width="640" height="360" loading="lazy"></div></div></div>');
+    }
 }
 
 function load_achievements(max_photo = 10) {

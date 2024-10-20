@@ -86,7 +86,7 @@ function set_page(app_url) {
         page = 'Student Works';
         show_active('app_reviews');
         show_active('app_student_work');
-        load_student_work(12, 4);//xx | xxv
+        load_student_work(13, 4);//xx | xxv
 
         footer_outl = true;
 
@@ -101,7 +101,7 @@ function set_page(app_url) {
         page = 'Achievements';
         show_active('app_reviews');
         show_active('app_achievements');
-        load_special_achievements();
+        load_special_achievements(0, 1);
         load_achievements(16); //cj
 
         footer_outl = true;
