@@ -23,6 +23,8 @@ function load_special_achievements(max_hscj = 10, max_vscj = 10){
 
     $('.special_achievements').html(sAchievement);
 
+
+    $('.special_achievement_img').append('<div class="text-center"><h3><i class="bi bi-award"></i> 特别成就</h3></div>');
     for(i=max_hscj; i >= 1; i--){
         $('.special_achievement_img').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/achievements/hscj'+i+'.jpg" alt="..." width="640" height="1370" loading="lazy"></div></div></div>');
     }
