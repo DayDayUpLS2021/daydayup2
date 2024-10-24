@@ -106,9 +106,19 @@ function set_page(app_url) {
 
         footer_outl = true;
 
+    } else if (app_url.includes('rewards.html')) {
+
+        page = 'Rewards';
+        show_active('app_reviews');
+        show_active('app_rewards');
+        var yr_arr = {'2024': [2]}
+        load_rewards(yr_arr);
+
+        footer_outl = true;
+
     } else if (app_url.includes('gathering.html')) {
 
-        page = 'Gathering';
+        page = 'Gathering & Events';
         show_active('app_reviews');
         show_active('app_gathering');
         load_gathering(1, 15, 12, 33);//jhsp | jh | jhs | jhv
@@ -360,8 +370,9 @@ function get_nav_bar(){
     html += '<ul>';
     html += '<li class="app_student_work_control"><a class="app_student_work" href="student-works.html">Student Works</a></li>';
     html += '<li class="app_achievements_control"><a class="app_achievements" href="achievements.html">Achievements</a></li>';
+    html += '<li class="app_rewards_control"><a class="app_rewards" href="rewards.html">Rewards</a></li>';
     html += '<li class="app_parent_word_control" ><a class="app_parent_word" href="parent-word.html" >Parents & Students Words</a></li>';
-    html += '<li class="app_gathering_control"><a class="app_gathering" href="gathering.html" >Gathering</a></li>';
+    html += '<li class="app_gathering_control"><a class="app_gathering" href="gathering.html" >Gathering & Events</a></li>';
     html += '</ul></li>';
 
     // html += '<li><a href="meeting.html" class="app_meeting">Meetings</a></li>';
@@ -427,11 +438,14 @@ function loadScripts(app_url) {
         jsUrl.push("assets/js/holiday_class_detl.js?v=" + timestamp);
     }else if(app_url.includes('class-holiday-details.html')){
         jsUrl.push("assets/js/holiday_class_detl.js?v=" + timestamp);
-    }else if(app_url.includes('achievements.html') || app_url.includes('gathering.html') || app_url.includes('parent-word.html') || app_url.includes('student-works.html')){
+    }else if(app_url.includes('achievements.html') || app_url.includes('awards.html') || app_url.includes('parent-word.html') || app_url.includes('student-works.html')){
         jsUrl.push("assets/js/gallery.js?v=" + timestamp);
     }else if(app_url.includes('contact.html')){
         jsUrl.push("assets/js/map.js?v=" + timestamp);
-    }else if(app_url.includes('gathering.html') || app_url.includes('meeting.html')){
+    }else if(app_url.includes('meeting.html')){
+        jsUrl.push("assets/js/video.js?v=" + timestamp);
+    }else if(app_url.includes('gathering.html')){
+        jsUrl.push("assets/js/gallery.js?v=" + timestamp);
         jsUrl.push("assets/js/video.js?v=" + timestamp);
     }
 
