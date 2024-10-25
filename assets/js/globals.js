@@ -1,3 +1,4 @@
+
 var outlet_arr = [
     ['Khatib', '846 YiShun Ring Road #01-3631（level 2）<br/>Singapore 760846','assets/attachment/daydayup5.jpg', 1.418493624867837, 103.83487635665111],
     ['Bukit Timah Shopping Centre', '170 Upper Bukit Timah Road #B2-18 <br/>Singapore 588179', 'assets/attachment/daydayup5.jpg', 1.34311, 103.77607],
@@ -111,7 +112,7 @@ function set_page(app_url) {
         page = 'Rewards';
         show_active('app_reviews');
         show_active('app_rewards');
-        var yr_arr = {'2024': [2]}
+        var yr_arr = {'2024': [3]}
         load_rewards(yr_arr);
 
         footer_outl = true;
