@@ -45,7 +45,7 @@ function load_achievements(max_photo = 10) {
 }
 
 
-function load_rewards(yr_arr = {'2024': [10]}, max_photo = 10) {
+function load_rewards(yr_arr = {'2024': [10, 10]}, max_photo = 10) {
 
     $('.rewards').html('');
 
@@ -56,9 +56,20 @@ function load_rewards(yr_arr = {'2024': [10]}, max_photo = 10) {
 
             $('.rewards').append(`<div class="text-center"><h3><i class="bi bi-award"></i>${year} 年突出学习奖获得者！</h3></div></div>`);
 
+            //horizontal photo
+            $('.rewards').append('<div>');
+            for (i=max_photo[1]; i >= 1; i--) {
+                $('.rewards').append(`<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/rewards/${year}/${year}_xxj_v${i}.jpg" alt="..." width="640" height="360" loading="lazy"></div></div></div>`);
+            }
+            $('.rewards').append('</div>');
+
+            //verticle photo
+            $('.rewards').append('<div>');
             for (i=max_photo[0]; i >= 1; i--) {
                 $('.rewards').append(`<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/rewards/${year}/${year}_xxj_${i}.jpg" alt="..." width="640" height="850" loading="lazy"></div></div></div>`);
             }
+            $('.rewards').append('</div>');
+            
         }
     }
    

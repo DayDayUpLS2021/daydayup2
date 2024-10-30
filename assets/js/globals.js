@@ -112,7 +112,7 @@ function set_page(app_url) {
         page = 'Rewards';
         show_active('app_reviews');
         show_active('app_rewards');
-        var yr_arr = {'2024': [3]}
+        var yr_arr = {'2024': [3,1]}
         load_rewards(yr_arr);
 
         footer_outl = true;
