@@ -78,7 +78,7 @@ function set_page(app_url) {
         page = 'Parents & Students Words';
         show_active('app_reviews');
         show_active('app_parent_word');
-        load_parent_words(1, 17); //xsjz | xsjzv
+        load_parent_words(1, 18); //xsjz | xsjzv
 
         footer_outl = true;
 
