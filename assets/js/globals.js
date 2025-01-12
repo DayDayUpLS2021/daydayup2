@@ -103,7 +103,7 @@ function set_page(app_url) {
         show_active('app_reviews');
         show_active('app_achievements');
         load_special_achievements(0, 1);
-        load_achievements(16); //cj
+        load_achievements(19); //cj
 
         footer_outl = true;
 
