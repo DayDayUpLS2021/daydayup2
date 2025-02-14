@@ -244,6 +244,8 @@ function get_teachers() {
 
         ['曲世君', 'Qu ShiJun', 'qushijun2.jpg', '教师', '1983年毕业于大连大学中文系（前大连师专）先后担任中学，中专语文老师。后考入国家公务员。'],
 
+        ['郑晓雯', 'Zheng XiaoWen', 'zhengxiaowen2.jpg', '教师', '2013年毕业于中国大连交通大学工业设计专业，文学学士学位。中国书法等级认定中级，硬笔书法作品曾入选辽宁省硬笔书法家作品集，从事教培工作3年，用爱与耐心陪伴孩子们成长！'],
+
         // ['卓睿庆', 'Zhuo RuiQing', 'zhuoruiqing2.jpg', '教师', ''],
 
         // ['冯婌清', 'Adeline Pang SooCheng', 'fengshuqing2.jpg', '教师', ''],
