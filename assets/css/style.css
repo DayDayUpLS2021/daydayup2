@@ -1859,3 +1859,18 @@ section {
   border: 3px solid black;
   border-radius: 5px;
 }
+
+
+
+/*--------------------------------------------------------------
+# Custom
+--------------------------------------------------------------*/
+
+.teacher-section  {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  text-align: center;
+  background: #5fcf80;
+  color: #fff;
+  border-radius: 25px;
+}
