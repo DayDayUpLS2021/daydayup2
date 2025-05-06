@@ -78,7 +78,7 @@ function set_page(app_url) {
         page = 'Parents & Students Words';
         show_active('app_reviews');
         show_active('app_parent_word');
-        load_parent_words(1, 19); //xsjz | xsjzv
+        load_parent_words(1, 20); //xsjz | xsjzv
 
         footer_outl = true;
 
@@ -122,7 +122,7 @@ function set_page(app_url) {
         page = 'Gathering & Events';
         show_active('app_reviews');
         show_active('app_gathering');
-        load_gathering(1, 15, 12, 33);//jhsp | jh | jhs | jhv
+        load_gathering(1, 15, 12, 38);//jhsp | jh | jhs | jhv
 
         footer_outl = true;
 
