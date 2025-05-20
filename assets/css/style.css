@@ -1698,8 +1698,13 @@ section {
   transition: transform 5s ease, opacity 5s ease-in-out;
 }
 
-
-
+/* customize */
+.carousel-item img {
+  height: 500px;
+  width: 100%;
+  object-fit: contain;
+  background-color: #FFF;
+}
 
 /* Video class */
 .video-container {
@@ -1873,4 +1878,21 @@ section {
   background: #5fcf80;
   color: #fff;
   border-radius: 25px;
+}
+
+
+/* use within the period of celebration only
+no words overwritting or on the flag 
+flag has to be shown fully 
+need to indicate celebrating SG60*/
+/* #sg60 {
+  background: url("../img/logo/sg-flag.avif") top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: right;
+  width: 100%;
+  height: 60vh;
+} */
+#sg60 {
+  background-color: #F04A5B;
 }

@@ -111,3 +111,45 @@ function load_gathering(max_jhsp_video = 10, max_jh_photo = 10, max_jhs_photo = 
     set_video_control();
 }
 
+
+function load_mother_day(max_md = 10) {
+    let carouselInner = $('.mother_day_inner');
+
+    for (let i = max_md; i >= 1; i--) {
+        const activeClass = i === max_md ? 'active' : ''; // only first image is active
+        const html = `<div class="carousel-item ${activeClass}">
+                    <img src="assets/img/gathering/motherday/md_${i}.jpg" class="d-block w-100" alt="Mother's Day ${i}" loading="lazy">
+                    </div>`;
+        carouselInner.append(html);
+    }
+
+}
+
+
+function load_composition(max_hc = 10, max_vc = 10){
+    $('.composition').append('<div class="text-center"><h3><i class="bi bi-file-text"></i> 作文 | Composition</h3></div>');
+
+    for(i=max_hc; i >= 1; i--){
+        $('.composition').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/achievements/hscj'+i+'.jpg" alt="..." width="640" height="1370" loading="lazy"></div></div></div>');
+    }
+
+
+    for(i=max_vc; i >= 1; i--){
+        $('.composition').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/achievements/vscj'+i+'.jpg" alt="..." width="640" height="360" loading="lazy"></div></div></div>');
+    }
+}
+
+
+function load_sg60(max_hsg = 10, max_vsg = 10){
+    // $('.sg60').append('<div class="text-center"><h3><img src="assets/img/logo/sg60.png" alt="..." height="40" > 新加坡六十周年 | SG 60</h3></div>');
+    $('.sg60').append('<div class="text-center"><h3><img src="assets/img/logo/sg-flag.avif" alt="..." height="30" > 新加坡六十周年 | SG 60</h3></div>');
+
+    for(i=max_hsg; i >= 1; i--){
+        $('.sg60').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/achievements/hscj'+i+'.jpg" alt="..." width="640" height="1370" loading="lazy"></div></div></div>');
+    }
+
+
+    for(i=max_vsg; i >= 1; i--){
+        $('.sg60').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/achievements/vscj'+i+'.jpg" alt="..." width="640" height="360" loading="lazy"></div></div></div>');
+    }
+}

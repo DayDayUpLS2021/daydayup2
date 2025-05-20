@@ -138,6 +138,15 @@ function set_page(app_url) {
         show_active('app_announcements');
         load_announcements();
 
+    } else if (app_url.includes('sg60.html')) {
+
+        page = 'SG60';
+        show_active('app_sg60');
+
+        load_mother_day(98);
+        // load_composition(1,1);
+        // load_sg60(1,1);
+
     }else{
         show_active('app_home');
     }
@@ -399,6 +408,8 @@ function get_nav_bar(){
     html += '</li>';
 
     html += '<li><a class="app_teacher" href="teachers.html">Teachers</a></li>';
+
+    html += '<li><a class="app_sg60" href="sg60.html" title="Celebrate SG60!"><img src="assets/img/logo/sg60.png" alt="SG60" style="height:50px; vertical-align:middle;"></a></li>';
 
     html += '<li class="dropdown"><a href="#"><span class="app_reviews">Reviews</span><i class="bi bi-chevron-down app_reviews_chevron"></i></a>';
     html += '<ul>';
