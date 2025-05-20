@@ -22,7 +22,7 @@ function get_detl() {
 
     if(level_pre == 'K'){
 
-        $('#header_title').text('Kindergarten '+level_pos);
+        $('#header_title').html('幼儿园 '+level_pos+'年级 | Kindergarten '+level_pos);
 
         $('.info-1').show();
         $('.info-1').find('.nav-link').addClass('active show');
@@ -31,7 +31,7 @@ function get_detl() {
 
     if(level_pre == 'P'){
 
-        $('#header_title').text('Primary '+level_pos);
+        $('#header_title').html('小学 '+level_pos+'年级 | Primary '+level_pos);
 
         $('.info-2, .info-3').show();
 
@@ -49,7 +49,7 @@ function get_detl() {
 
     if(level_pre == 'S'){
 
-        $('#header_title').text('Secondary '+level_pos);
+        $('#header_title').html('中学 '+level_pos+'年级 | Secondary '+level_pos);
 
         $('.info-6').show();
         $('.info-6').find('.nav-link').addClass('active show');

@@ -1896,3 +1896,8 @@ need to indicate celebrating SG60*/
 #sg60 {
   background-color: #F04A5B;
 }
+
+
+.k-label, .p-label, .s-label {
+  text-align: center;
+}

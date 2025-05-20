@@ -144,8 +144,8 @@ function set_page(app_url) {
         show_active('app_sg60');
 
         load_mother_day(98);
-        // load_composition(1,1);
-        // load_sg60(1,1);
+        load_composition(0);
+        load_sg60(0);
 
     }else{
         show_active('app_home');
@@ -158,22 +158,7 @@ function set_page(app_url) {
     $(window).resize(function() {
         updateAppName(page, app_name, app_name2);  // Update on window resize
     });
-
-    //header tab title
-    $('.app_home').text('Home');
-    $('.app_about').text('About');
-    $('.app_timetable').text('Calendar');
-    $('.app_programmes').text('Programmes');
-    $('.app_class').text('Classes');
-    $('.app_class_holiday').text('Holiday Classes');
-    $('.app_teacher').text('Teachers');
-    $('.app_reviews').text('Reviews');
-    $('.app_student_work').text('Student Works');
-    $('.app_parent_word').text('Parents & Students Words');
-    $('.app_contact').text('Contact');
-    $('.get-started-btn').text('Get Started');
-
-
+    
     var contact = '郑娟老师👩‍🏫 华文热线咨询<br/><strong>Phone:</strong> 91669059 （每日）9am-9pm<br/><br/><strong>Tel:</strong> 6530 3063<br/><strong>WhatsApp:</strong> <a  onclick="window.open(\'https://api.whatsapp.com/send?phone=6581515668\', \'_blank\')">+65 8151 5668</a><br/><strong>Email:</strong> daydayupls21@gmail.com';
 
     var copyright = 'All images on this website are copyrighted by their respective owners. We respect the copyrights of others and do not knowingly infringe on them. If you believe that any of the images on this website infringes on your copyright, please contact us and we will remove it immediately.';
@@ -204,7 +189,10 @@ function set_page(app_url) {
 
 function load_max_ppl_msg(){
     
-    $('.max-ppl-msg').html('Max 9 Students/timeslot<br/>最大班额9人');
+    $('.max-ppl-msg').html('最大班额9人<br/>Max 9 Students/timeslot');
+    $('.k-label').html('幼儿园<br/>Kindergarten');
+    $('.p-label').html('小学<br/>Primary');
+    $('.s-label').html('中学<br/>Secondary');
 
 }
 
@@ -394,37 +382,42 @@ function footer_outlet(outlet_arr, contact) {
 function get_nav_bar(){
 
     var html = '';
-    html += '<li><a href="index.html" class="app_home">Home</a></li>';
+    html += '<li><a href="index.html" class="app_home">主页<br/>Home</a></li>';
 
-    html += '<li><a href="about.html" class="app_about">About</a></li>';
+    html += '<li><a href="about.html" class="app_about">关于<br/>About</a></li>';
 
-    html += '<li><a href="timetable.html" class="app_timetable">Calendar</a></li>';
+    html += '<li><a href="timetable.html" class="app_timetable">学年历<br/>Calendar</a></li>';
 
     // html += '<li><a href="announcements.html" class="app_announcements">Announcements</a></li>';
 
     html += '<li class="dropdown">';
-    html += '<a href="#"><span class="app_programmes">Programmes</span> <i class="bi bi-chevron-down"></i></a>';
-    html += '<ul><li><a href="classes.html" class="app_class">Classes</a></li></ul>';
+    html += '<a href="#"><span class="app_programmes">课程项目<br/>Programmes</span> <i class="bi bi-chevron-down"></i></a>';
+    html += '<ul><li><a href="classes.html" class="app_class">课程<br/>Classes</a></li></ul>';
     html += '</li>';
 
-    html += '<li><a class="app_teacher" href="teachers.html">Teachers</a></li>';
+    html += '<li><a class="app_teacher" href="teachers.html">教师<br/>Teachers</a></li>';
 
     html += '<li><a class="app_sg60" href="sg60.html" title="Celebrate SG60!"><img src="assets/img/logo/sg60.png" alt="SG60" style="height:50px; vertical-align:middle;"></a></li>';
 
-    html += '<li class="dropdown"><a href="#"><span class="app_reviews">Reviews</span><i class="bi bi-chevron-down app_reviews_chevron"></i></a>';
+    html += '<li class="dropdown"><a href="#"><span class="app_reviews">反馈<br/>Reviews</span><i class="bi bi-chevron-down app_reviews_chevron"></i></a>';
     html += '<ul>';
-    html += '<li class="app_student_work_control"><a class="app_student_work" href="student-works.html">Student Works</a></li>';
-    html += '<li class="app_achievements_control"><a class="app_achievements" href="achievements.html">Achievements</a></li>';
-    html += '<li class="app_rewards_control"><a class="app_rewards" href="rewards.html">Rewards</a></li>';
-    html += '<li class="app_parent_word_control" ><a class="app_parent_word" href="parent-word.html" >Parents & Students Words</a></li>';
-    html += '<li class="app_gathering_control"><a class="app_gathering" href="gathering.html" >Gathering & Events</a></li>';
+    html += '<li class="app_student_work_control"><a class="app_student_work" href="student-works.html">学习<br/>Student Works</a></li>';
+    html += '<li class="app_achievements_control"><a class="app_achievements" href="achievements.html">芳草地<br/>Achievements</a></li>';
+    html += '<li class="app_rewards_control"><a class="app_rewards" href="rewards.html">进步奖<br/>Rewards</a></li>';
+    html += '<li class="app_parent_word_control" ><a class="app_parent_word" href="parent-word.html" >家长与学生的话语<br/>Parents & Students Words</a></li>';
+    html += '<li class="app_gathering_control"><a class="app_gathering" href="gathering.html" >精彩时光<br/>Gathering & Events</a></li>';
     html += '</ul></li>';
 
     // html += '<li><a href="meeting.html" class="app_meeting">Meetings</a></li>';
 
-    html += '<li><a href="contact.html" class="app_contact">Contact</a></li>';
-          
+    html += '<li><a href="contact.html" class="app_contact">联系我们<br/>Contact</a></li>';
+
     $('#navbar_ul').html(html);
+
+
+    //header tab title
+    // $('.app_class_holiday').text('Holiday Classes');
+    $('.get-started-btn').html('立即体验<br/>Get Started');
 }
 
 
