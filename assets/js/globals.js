@@ -271,7 +271,7 @@ function get_teachers() {
     var name_en = '';
     var photo = '';
 
-    teacher_html += '<div style="padding-top:10px;padding-bottom:10px;"><div class="teacher-section"><h1 style="margin-top:8px;">现任老师</h1></div></div>';
+    teacher_html += '<div style="padding-top:10px;padding-bottom:10px;"><div class="teacher-section"><h1 style="margin-top:8px;">现任老师 | Current Teachers</h1></div></div>';
 
     teacher_arr.forEach((teacher, key) => {
 
@@ -288,7 +288,7 @@ function get_teachers() {
         teacher_html += '</div></div></div>';
     });
 
-    teacher_html += '<div style="padding-top:10px;padding-bottom:30px;"><div class="teacher-section"><h1 style="margin-top:8px;">历史老师</h1></div></div>';
+    teacher_html += '<div style="padding-top:10px;padding-bottom:30px;"><div class="teacher-section"><h1 style="margin-top:8px;">历史老师 | Past Techers</h1></div></div>';
 
     hist_teacher_arr.forEach((teacher, key) => {
 
