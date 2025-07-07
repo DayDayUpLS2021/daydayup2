@@ -126,8 +126,8 @@ function load_mother_day(max_image = 10) {
 function load_ppt() {
     let pptInner = $('.ppt_inner');
     pptInner.append('<div class="text-center"><h3><i class="bi bi-file-text"></i> 美味飘香</h3></div>');
-    const src = 'https://docs.google.com/presentation/d/e/2PACX-1vTPWCFTI038_nt-2YDmdh8xX_8zUvw_gulJCDBGendis0PZiNVWAlvXg4fV652Ecg/pub?start=true&loop=true&delayms=3000';
-    const html = '<div style="display: flex; justify-content: center; margin-top: 20px;"><iframe src="'+src+'" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>';
+    const src = 'https://docs.google.com/presentation/d/e/2PACX-1vTPWCFTI038_nt-2YDmdh8xX_8zUvw_gulJCDBGendis0PZiNVWAlvXg4fV652Ecg/pubembed?start=false&loop=false&delayms=3000';
+    const html = '<div style="display: flex; justify-content: center; margin-top: 20px;"><iframe loading="lazy" src="'+src+'" frameborder="0" style="width: 100%; height: 80vh;" webkitallowfullscreen="true"></iframe></div>';
     pptInner.append(html);
 }
 
