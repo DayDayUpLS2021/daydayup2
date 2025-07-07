@@ -144,7 +144,7 @@ function set_page(app_url) {
         show_active('app_sg60');
 
         load_mother_day(98);
-        load_ppt();
+        // load_ppt();
         load_composition(0);
         load_sg60(0);
 
