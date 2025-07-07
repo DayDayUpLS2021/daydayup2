@@ -111,7 +111,6 @@ function load_gathering(max_jhsp_video = 10, max_jh_photo = 10, max_jhs_photo = 
     set_video_control();
 }
 
-
 function load_mother_day(max_image = 10) {
     let carouselInner = $('.mother_day_inner');
     carouselInner.append('<div class="text-center"><h3><i class="bi bi-person-heart"></i> 母亲节 | Mother\'s Day [2025]</h3></div>');
@@ -122,6 +121,14 @@ function load_mother_day(max_image = 10) {
                     </div>`;
         carouselInner.append(html);
     }
+}
+
+function load_ppt() {
+    let pptInner = $('.ppt_inner');
+    pptInner.append('<div class="text-center"><h3><i class="bi bi-file-text"></i> 美味飘香</h3></div>');
+    const src = 'https://docs.google.com/presentation/d/e/2PACX-1vTPWCFTI038_nt-2YDmdh8xX_8zUvw_gulJCDBGendis0PZiNVWAlvXg4fV652Ecg/pub?start=true&loop=true&delayms=3000';
+    const html = '<div style="display: flex; justify-content: center; margin-top: 20px;"><iframe src="'+src+'" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe></div>';
+    pptInner.append(html);
 }
 
 function load_composition(max_image = 10) {
