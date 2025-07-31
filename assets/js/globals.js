@@ -239,6 +239,10 @@ function get_teachers() {
 
         ['张丽春', 'Zhang LiChun', 'zhanglichun2.jpg', '教师', '本人毕业于中国辽宁大学汉语言文学，89年毕业后，一直从事一线教育教学工作。期间获得中国高级教师资格证书，辽宁省一等优秀论文，多次被评为大连市优秀班主任，瓦房店市优秀班主任，瓦房店市骨干教师，大连市优秀辅导员等荣誉称号。<br/>教学理念：一切为了学生，为了学生的一切！'],
 
+        ['蔡紫萱 ', 'Cai ZiXuan', 'caizixuan2.jpg', '教师', '拥有幼教经验，年轻有干劲儿，善于用真诚与热情与孩子拉近距离。注重营造尊重、鼓励与陪伴并存的课堂氛围。相信爱与耐心是教育最好的起点，也始终把“真诚、细致、责任心”作为一名老师应有的基本素养。'],
+
+        ['云秀晶 ', 'Yun XiuJing', 'yunxiujing2.jpg', '教师', '2015年毕业于Victoria University, Bachelor of Business Management。2024年考获珠算第9级和心算第6级。从事14年的幼教，编辑幼儿园课本，曾协助担任教师培训师。教育理念：教育不是批量生产，而是因材施教，发现每个孩子的闪光点，让他们的独特之处得以闪耀。'],
+
         
         ['阮建军', 'Ruan JianJun', 'ruanjianjun2.jpg', '技术顾问', '目前就读于新加坡国立大学（National University of Singapore, NUS），主修软件编程（Software Computing）。于2018年毕业于新加坡理工学院（Singapore Polytechnic）。目前在Zetta Solution担任软件编程师（Software Developer），主要负责开发和维护软件应用程序，与团队合作进行软件设计和实现，解决软件问题并提供技术支持，并编写和维护技术文档。']        
 
