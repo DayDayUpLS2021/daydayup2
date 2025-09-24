@@ -59,7 +59,7 @@ function load_rewards(yr_arr = {'2024': [10, 10]}, max_photo = 10) {
             //horizontal photo
             $('.rewards').append('<div>');
             for (i=max_photo[1]; i >= 1; i--) {
-                $('.rewards').append(`<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/rewards/${year}/${year}_xxj_v${i}.jpg" alt="..." width="640" height="360" loading="lazy"></div></div></div>`);
+                $('.rewards').append(`<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/rewards/${year}/${year}_xxj_h${i}.jpg" alt="..." width="640" height="360" loading="lazy"></div></div></div>`);
             }
             $('.rewards').append('</div>');
 
@@ -69,6 +69,37 @@ function load_rewards(yr_arr = {'2024': [10, 10]}, max_photo = 10) {
                 $('.rewards').append(`<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/rewards/${year}/${year}_xxj_${i}.jpg" alt="..." width="640" height="850" loading="lazy"></div></div></div>`);
             }
             $('.rewards').append('</div>');
+            
+        }
+    }
+   
+}
+
+
+function load_childrensday(yr_arr = {'2025': [10, 10]}, max_photo = 10) {
+
+    $('.childrensday').html('');
+
+    // Iterate over the array of years and their max_photo limits
+    for (let year in yr_arr) {
+        if (yr_arr.hasOwnProperty(year)) {
+            let max_photo = yr_arr[year];
+
+            $('.childrensday').append(`<div class="text-center"><h3><i class="bi bi-balloon"></i>${year} 儿童节！</h3></div></div>`);
+
+            //horizontal photo
+            $('.childrensday').append('<div>');
+            for (i=max_photo[1]; i >= 1; i--) {
+                $('.childrensday').append(`<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/childrensday/${year}/${year}_etj_h${i}.jpg" alt="..." width="640" height="360" loading="lazy"></div></div></div>`);
+            }
+            $('.childrensday').append('</div>');
+
+            //verticle photo
+            $('.childrensday').append('<div>');
+            for (i=max_photo[0]; i >= 1; i--) {
+                $('.childrensday').append(`<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/childrensday/${year}/${year}_etj_${i}.jpg" alt="..." width="640" height="850" loading="lazy"></div></div></div>`);
+            }
+            $('.childrensday').append('</div>');
             
         }
     }

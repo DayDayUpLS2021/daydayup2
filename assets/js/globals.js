@@ -117,6 +117,16 @@ function set_page(app_url) {
 
         footer_outl = true;
 
+    } else if (app_url.includes('childrensday.html')) {
+
+        page = 'Children\s Day';
+        show_active('app_reviews');
+        show_active('app_childrensday');
+        var yr_arr = {'2025': [22,1]}
+        load_childrensday(yr_arr);
+
+        footer_outl = true;
+
     } else if (app_url.includes('gathering.html')) {
 
         page = 'Gathering & Events';
@@ -406,13 +416,14 @@ function get_nav_bar(){
 
     html += '<li><a class="app_sg60" href="sg60.html" title="Celebrate SG60!"><img src="assets/img/logo/sg60.png" alt="SG60" style="height:50px; vertical-align:middle;"></a></li>';
 
-    html += '<li class="dropdown"><a href="#"><span class="app_reviews">反馈<br/>Reviews</span><i class="bi bi-chevron-down app_reviews_chevron"></i></a>';
+    html += '<li class="dropdown"><a href="#"><span class="app_reviews">反馈与分享<br/>Reviews & Sharing</span><i class="bi bi-chevron-down app_reviews_chevron"></i></a>';
     html += '<ul>';
     html += '<li class="app_student_work_control"><a class="app_student_work" href="student-works.html">学习<br/>Student Works</a></li>';
     html += '<li class="app_achievements_control"><a class="app_achievements" href="achievements.html">芳草地<br/>Achievements</a></li>';
     html += '<li class="app_rewards_control"><a class="app_rewards" href="rewards.html">进步奖<br/>Rewards</a></li>';
     html += '<li class="app_parent_word_control" ><a class="app_parent_word" href="parent-word.html" >家长与学生的话语<br/>Parents & Students Words</a></li>';
     html += '<li class="app_gathering_control"><a class="app_gathering" href="gathering.html" >精彩时光<br/>Gathering & Events</a></li>';
+    html += '<li class="app_children_control"><a class="app_childrensday" href="childrensday.html">儿童节<br/>Children\'s Day</a></li>';
     html += '</ul></li>';
 
     // html += '<li><a href="meeting.html" class="app_meeting">Meetings</a></li>';
