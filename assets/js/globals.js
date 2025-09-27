@@ -122,7 +122,7 @@ function set_page(app_url) {
         page = 'Children\s Day';
         show_active('app_reviews');
         show_active('app_childrensday');
-        var yr_arr = {'2025': [39,3]}
+        var yr_arr = {'2025': [53,4]}
         load_childrensday(yr_arr);
 
         footer_outl = true;
