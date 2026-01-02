@@ -270,7 +270,7 @@ function get_teachers() {
 
         ['郑建一', 'Zheng JianYi', 'zhengjianyi2.jpg', '教材编写负责人', '2010毕业于中国大连外国语大学，文学学士学位。他热爱教育事业，熟悉国内外中小学生生活及学生特点，在教学的过程中不断学习和研究良好的教学方法，为人专业严谨、幽默负责、亲和力强，善于根据学生特点，及时调整教学策略，因材施教，制定个性化教学方案，用有效的方法解决语文问题。他认为正视孩子的问题，理解孩子的需要，肯定孩子的进步，欣赏孩子的优点。'],
         
-        ['阮建军', 'Ruan JianJun', 'ruanjianjun2.jpg', '技术顾问', '目前就读于新加坡国立大学（National University of Singapore, NUS），主修软件编程（Software Computing）。于2018年毕业于新加坡理工学院（Singapore Polytechnic）。目前在Zetta Solution担任软件编程师（Software Developer），主要负责开发和维护软件应用程序，与团队合作进行软件设计和实现，解决软件问题并提供技术支持，并编写和维护技术文档。']        
+        ['阮建军', 'Ruan JianJun', 'ruanjianjun2.jpg', '技术顾问', '目前就读于新加坡国立大学（National University of Singapore, NUS），主修软件编程（Software Computing）。于2018年毕业于新加坡理工学院（Singapore Polytechnic）。曾经在Zetta Solution担任软件编程师（Software Developer），主要负责开发和维护软件应用程序，与团队合作进行软件设计和实现，解决软件问题并提供技术支持，并编写和维护技术文档。']        
 
     ]
 
