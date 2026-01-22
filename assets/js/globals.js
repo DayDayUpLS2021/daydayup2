@@ -78,7 +78,7 @@ function set_page(app_url) {
         page = 'Parents & Students Words';
         show_active('app_reviews');
         show_active('app_parent_word');
-        load_parent_words(1, 20); //xsjz | xsjzv
+        load_parent_words(1, 23); //xsjz | xsjzv
 
         footer_outl = true;
 
@@ -103,7 +103,7 @@ function set_page(app_url) {
         show_active('app_reviews');
         show_active('app_achievements');
         load_special_achievements(0, 1);
-        load_achievements(19); //cj
+        load_achievements(20); //cj
 
         footer_outl = true;
 
