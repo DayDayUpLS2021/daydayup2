@@ -132,7 +132,7 @@ function set_page(app_url) {
         page = 'Gathering & Events';
         show_active('app_reviews');
         show_active('app_gathering');
-        load_gathering(1, 15, 12, 38);//jhsp | jh | jhs | jhv
+        load_gathering(1, 17, 12, 38);//jhsp | jh | jhs | jhv
 
         footer_outl = true;
 
