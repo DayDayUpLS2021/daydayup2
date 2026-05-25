@@ -905,6 +905,7 @@ section {
 
 .trainers .member img {
   margin: -1px -1px 30px -1px;
+  width: calc(100% + 2px);
 }
 
 .trainers .member .member-content {
