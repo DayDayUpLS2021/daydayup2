@@ -132,7 +132,7 @@ function set_page(app_url) {
         page = 'Gathering & Events';
         show_active('app_reviews');
         show_active('app_gathering');
-        load_gathering(1, 17, 12, 38);//jhsp | jh | jhs | jhv
+        load_gathering(1, 21, 13, 43);//jhsp | jh | jhs | jhv
 
         footer_outl = true;
 
@@ -151,6 +151,7 @@ function set_page(app_url) {
     } else if (app_url.includes('sg60.html')) {
 
         page = 'SG60';
+        show_active('app_reviews');
         show_active('app_sg60');
 
         load_mother_day(98);
@@ -432,10 +433,9 @@ function get_nav_bar(){
 
     html += '<li><a class="app_teacher" href="teachers.html">教师<br/>Teachers</a></li>';
 
-    html += '<li><a class="app_sg60" href="sg60.html" title="Celebrate SG60!"><img src="assets/img/logo/sg60.png" alt="SG60" style="height:50px; vertical-align:middle;"></a></li>';
-
     html += '<li class="dropdown"><a href="#"><span class="app_reviews">反馈与分享<br/>Reviews & Sharing</span><i class="bi bi-chevron-down app_reviews_chevron"></i></a>';
     html += '<ul>';
+    html += '<li class="app_sg60_control"><a class="app_sg60" href="sg60.html" title="Celebrate SG60!"><img src="assets/img/logo/sg60.png" alt="SG60" style="height:30px; vertical-align:middle;"></a></li>';
     html += '<li class="app_student_work_control"><a class="app_student_work" href="student-works.html">学习<br/>Student Works</a></li>';
     html += '<li class="app_achievements_control"><a class="app_achievements" href="achievements.html">芳草地<br/>Achievements</a></li>';
     html += '<li class="app_rewards_control"><a class="app_rewards" href="rewards.html">进步奖<br/>Rewards</a></li>';
