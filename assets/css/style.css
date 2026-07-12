@@ -1707,6 +1707,24 @@ section {
   background-color: #FFF;
 }
 
+/* Paginated photo gallery */
+.gallery-container {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.gallery-container .gallery-pagination {
+  margin-top: 10px;
+}
+
+.gallery-container .page-link {
+  cursor: pointer;
+}
+
+.gallery-container .gallery-item.gallery-item-hidden {
+  display: none !important;
+}
+
 /* Video class */
 .video-container {
   display: flex;

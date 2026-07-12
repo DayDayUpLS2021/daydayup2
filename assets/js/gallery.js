@@ -121,25 +121,108 @@ function load_parent_words(max_photo_xsjz = 10, max_photo_xsjzv = 10) {
 }
 
 
-function load_gathering(max_jhsp_video = 10, max_jh_photo = 10, max_jhs_photo = 10, max_jhv_photo = 10) {
-    
+function load_gathering(max_jhsp_video = 10, max_jh_photo = 10, max_jhs_photo = 10, max_jhv_photo = 10, loadMode = 'lazy') {
+
     for(i=max_jhsp_video; i >= 1; i--){
         $('.gatherings').append('<div class="col-md-12 d-flex align-items-stretch video-container"><div class="card"><div class="card-img"><video loading="lazy" id="jh_video' + i + '" onplay="updateButtonIcon(\'jh_video'+i+'\', \'pause\')" onpause="updateButtonIcon(\'jh_video'+i+'\', \'play\')" onended="updateButtonIcon(\'jh_video'+i+'\', \'play\')"><source src="assets/img/gathering/jhsp/jhsp' + i + '.mp4" type="video/mp4" preload="metadata"></video><div class="controls"><button class="btn btn-success bi bi-play-fill" id="btn_jh_video'+i+'" onclick="togglePlay(\'jh_video' + i + '\')"></button><div class="progress-bar" onclick="setVideoProgress(event, \'progress_jh_video'+i+'\')"><div class="progress" id="progress_jh_video'+i+'"></div></div></div></div></div>');
     }
 
-    for(i=max_jh_photo; i >= 1; i--){
-        $('.gatherings').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/gathering/jh/jh'+i+'.jpg" alt="..." width="640" height="360" loading="lazy"></div></div></div>');
-    }
+    const jhImages = [];
+    for (i = max_jh_photo; i >= 1; i--) jhImages.push('assets/img/gathering/jh/jh' + i + '.jpg');
+    renderPaginatedGallery('.gathering-jh', jhImages, { mode: loadMode, imgWidth: 640, imgHeight: 360, altPrefix: '聚会照片' });
 
-    for(i=max_jhs_photo; i >= 1; i--){
-        $('.gatherings').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/gathering/jhs/jhs'+i+'.jpg" alt="..." width="640" height="850" loading="lazy"></div></div></div>');
-    }
+    const jhsImages = [];
+    for (i = max_jhs_photo; i >= 1; i--) jhsImages.push('assets/img/gathering/jhs/jhs' + i + '.jpg');
+    renderPaginatedGallery('.gathering-jhs', jhsImages, { mode: loadMode, imgWidth: 640, imgHeight: 850, altPrefix: '聚会照片' });
 
-    for(i=max_jhv_photo; i >= 1; i--){
-        $('.gatherings').append('<div class="col-md-6 d-flex align-items-stretch"><div class="card"><div class="card-img"><img src="assets/img/gathering/jhv/jhv'+i+'.jpg" alt="..." width="640" height="1370" loading="lazy"></div></div></div>');
-    }
+    const jhvImages = [];
+    for (i = max_jhv_photo; i >= 1; i--) jhvImages.push('assets/img/gathering/jhv/jhv' + i + '.jpg');
+    renderPaginatedGallery('.gathering-jhv', jhvImages, { mode: loadMode, imgWidth: 640, imgHeight: 1370, altPrefix: '聚会照片' });
 
     set_video_control();
+}
+
+// Renders an image gallery in pages of `perPage` items with pagination controls.
+// opts.mode: 'lazy' (all pages in the DOM, hidden pages use loading="lazy" so the
+// browser defers fetching until a page is shown) or 'ondemand' (only the active
+// page's <img> tags exist in the DOM; switching pages creates/destroys them).
+function renderPaginatedGallery(containerSelector, imagePaths, opts = {}) {
+
+    opts = Object.assign({ perPage: 4, mode: 'lazy', imgWidth: 640, imgHeight: 360, altPrefix: 'Photo' }, opts);
+
+    const $container = $(containerSelector);
+    if (!$container.length || !imagePaths.length) return;
+
+    const totalPages = Math.ceil(imagePaths.length / opts.perPage);
+    let currentPage = 1;
+
+    $container.html('<div class="row gallery-grid"></div><nav aria-label="gallery pagination"><ul class="pagination justify-content-center gallery-pagination"></ul></nav>');
+
+    const $grid = $container.find('.gallery-grid');
+    const $pagination = $container.find('.gallery-pagination');
+
+    function imgCard(src, idx, page) {
+        const hiddenClass = (opts.mode === 'lazy' && page !== 1) ? ' gallery-item-hidden' : '';
+        const loading = opts.mode === 'ondemand' ? 'eager' : 'lazy';
+        return '<div class="col-md-6 d-flex align-items-stretch gallery-item' + hiddenClass + '" data-page="' + page + '"><div class="card"><div class="card-img"><img src="' + src + '" alt="' + opts.altPrefix + ' ' + idx + '" width="' + opts.imgWidth + '" height="' + opts.imgHeight + '" loading="' + loading + '"></div></div></div>';
+    }
+
+    if (opts.mode === 'lazy') {
+        imagePaths.forEach((src, idx) => {
+            const page = Math.floor(idx / opts.perPage) + 1;
+            $grid.append(imgCard(src, idx + 1, page));
+        });
+    }
+
+    function showPage(page) {
+        currentPage = Math.min(Math.max(page, 1), totalPages);
+
+        if (opts.mode === 'ondemand') {
+            $grid.empty();
+            const start = (currentPage - 1) * opts.perPage;
+            imagePaths.slice(start, start + opts.perPage).forEach((src, i) => {
+                $grid.append(imgCard(src, start + i + 1, currentPage));
+            });
+        } else {
+            $grid.find('.gallery-item').addClass('gallery-item-hidden');
+            $grid.find('.gallery-item[data-page="' + currentPage + '"]').removeClass('gallery-item-hidden');
+        }
+
+        renderPagination();
+    }
+
+    function renderPagination() {
+
+        if (totalPages <= 1) { $pagination.empty(); return; }
+
+        let html = '';
+        html += '<li class="page-item' + (currentPage === 1 ? ' disabled' : '') + '"><a class="page-link gallery-prev" href="#">&laquo;</a></li>';
+
+        for (let p = 1; p <= totalPages; p++) {
+            html += '<li class="page-item' + (p === currentPage ? ' active' : '') + '"><a class="page-link gallery-page-link" href="#" data-page="' + p + '">' + p + '</a></li>';
+        }
+
+        html += '<li class="page-item' + (currentPage === totalPages ? ' disabled' : '') + '"><a class="page-link gallery-next" href="#">&raquo;</a></li>';
+
+        $pagination.html(html);
+    }
+
+    $pagination.on('click', '.gallery-page-link', function(e) {
+        e.preventDefault();
+        showPage(parseInt($(this).data('page'), 10));
+    });
+
+    $pagination.on('click', '.gallery-prev', function(e) {
+        e.preventDefault();
+        showPage(currentPage - 1);
+    });
+
+    $pagination.on('click', '.gallery-next', function(e) {
+        e.preventDefault();
+        showPage(currentPage + 1);
+    });
+
+    showPage(1);
 }
 
 function load_mother_day(max_image = 10) {
